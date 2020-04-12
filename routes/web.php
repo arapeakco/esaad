@@ -17,11 +17,4 @@ Route::get('image/{folder}/{path}/{size?}', 'MediaController@photo');
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', function () {
-    $page = \App\Page::find(35);
-    dd($page->translations);
-});
+Route::get('/', 'Front\HomeController@index');

@@ -74,7 +74,7 @@
 
                     <div class="img-responsive">
                         <div class="imageEditProfile">
-                            <img src="{{ url('image/' . (isset($item) ? $item->data['image'] : "")  ) }}" alt="" id="imgshow" style="max-width: 100%">
+                            <img src="{{ url('image/' . (isset($item) ? @$item->data['image'] : "")  ) }}" alt="" id="imgshow" style="max-width: 100%">
                         </div>
                     </div>
 

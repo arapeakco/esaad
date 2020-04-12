@@ -29,7 +29,9 @@ class FamousRequest extends FormRequest
 
         return [
             'name' => 'required|string',
-            'url'   => 'required|url'
+            'url'   => 'required|url',
+            'image' => 'required_unless:_method,PUT|image',
+
         ];
     }
 

@@ -27,7 +27,11 @@ class FamousController extends Controller
     {
         $data = $request->all();
         $data['post_type_id'] = 4;
-        $data['data'] = ['video' => @getVedioData($data['url'])['embeded_id']];
+        $arr['video'] = @getVedioData($data['url'])['embeded_id'];
+
+        if ($file = $request->file('image'))
+            $arr['image'] =  $file->store('images');
+        $data['data'] = $arr ;
 
         Post::create($data);
         return $this->response_api(true, __('front.success'), StatusCodes::OK);
@@ -43,7 +47,11 @@ class FamousController extends Controller
     {
         $data = $request->all();
         $data['post_type_id'] = 4;
-        $data['data'] = ['video' => @getVedioData($data['url'])['embeded_id']];
+        $arr['video'] = @getVedioData($data['url'])['embeded_id'];
+
+        if ($file = $request->file('image'))
+            $arr['image'] =  $file->store('images');
+        $data['data'] = $arr ;
 
         Post::updateOrCreate(['id' => $id], $data);
         return $this->response_api(true, __('front.success'), StatusCodes::OK);

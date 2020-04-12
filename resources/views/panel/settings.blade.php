@@ -73,12 +73,12 @@
 
                                 </div>
 
-{{--                                <div class="form-group">--}}
+                                <div class="form-group">
 
-{{--                                    <label>وصف الموقع</label>--}}
-{{--                                    <textarea name="site_description" class="form-control" aria-describedby="emailHelp"--}}
-{{--                                              placeholder="وصف الموقع">{{ getSetting('site_description') }}</textarea>--}}
-{{--                                </div>--}}
+                                    <label>العنوان</label>
+                                    <textarea name="address" class="form-control" aria-describedby="emailHelp"
+                                              placeholder="العنوان">{{ getSetting('address') }}</textarea>
+                                </div>
 
 {{--                                <div class="form-group">--}}
 

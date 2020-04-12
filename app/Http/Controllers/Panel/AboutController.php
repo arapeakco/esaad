@@ -24,9 +24,14 @@ class AboutController extends Controller
         $item = Post::query()->where('post_type_id' , 1)->first();
         $data = $request->all();
         $data['post_type_id'] = 1;
-        $data['data'] = ['video' => @getVedioData($data['url'])['embeded_id']];
-        Post::query()->updateOrCreate(['id' => @$item->id ] , $data);
+        $arr = [];
+        $arr['video'] = @getVedioData($data['url'])['embeded_id'];
 
+        if ($file = $request->file('image')) {
+            $arr['image'] = $file->store('images');
+        }
+        $data['data'] = $arr;
+        Post::query()->updateOrCreate(['id' => @$item->id ] , $data);
         return $this->response_api(true, __('front.success'), StatusCodes::OK);
     }
 

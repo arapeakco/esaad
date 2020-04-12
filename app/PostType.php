@@ -33,4 +33,9 @@ class PostType extends Model
             return $q->filter($search);
         });
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

@@ -56,6 +56,29 @@
             </div>
 
 
+            <div class="kt-portlet">
+                <div class="kt-portlet__body ">
+
+
+                    <div class="form-group">
+                        <label>الصورة</label>
+                        <div></div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imgload" name="image" {{ isset($item) && @$item->data['image'] ? "required" : ""  }} >
+                            <label class="custom-file-label" for="imgload" id="imgload">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="img-responsive">
+                        <div class="imageEditProfile">
+                            <img src="{{ url('image/' . (isset($item) ? @$item->data['image'] : "")  ) }}" alt="" id="imgshow" style="max-width: 100%">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
     </div>
     {!! Form::close() !!}
@@ -65,4 +88,15 @@
 
 @push('js')
     <script src="{{ asset('panelAssets/js/post.js') }}"></script>
+    <script>
+        $("#imgload").change(function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imgshow').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    </script>
 @endpush

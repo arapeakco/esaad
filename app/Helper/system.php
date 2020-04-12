@@ -90,4 +90,12 @@ function getVedioData($url)
     return $data;
 }
 
+function getMenuItems(){
+    return \App\Item::where('is_visible' , 1)->get();
+}
+
+function getPostType(){
+    return \App\PostType::all();
+}
+
 ?>
