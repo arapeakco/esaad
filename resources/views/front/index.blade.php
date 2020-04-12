@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-lg-5 mr-auto">
                     <div class="imageSection overlay wow fadeInUp shape" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <img src="{{ url('image/' . $about->posts()->first()->data['image'] . '/424x235') }}" alt="">
+                        <img src="{{ url('image/' . @$about->posts()->first()->data['image'] . '/424x235') }}" alt="">
                         <div class="playVideo btn-hover " data-toggle="modal" data-url="{{ $about->name }}" data-target="#ModalVideoMaster">
                             <i class="fas fa-play"></i>
                         </div>
