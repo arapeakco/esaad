@@ -31,23 +31,6 @@ class SettingsController extends Controller
     }
 
 
-    public function about()
-    {
-        return view('panel.about.create');
-    }
-
-    public function storeAbout(Request $request)
-    {
-        $data = $request->all();
-
-        unset($data['_token']);
-        if ($file = $request->file('about_image')){
-            $data['about_image'] = $file->store('images');
-        }
-        Setting::setSetting($data);
-        return $this->response_api(true, __('front.success'), StatusCodes::OK);
-    }
-
     public function slider()
     {
         return view('panel.slider.create');

@@ -21,4 +21,9 @@ class Post extends Model
         return $this->belongsTo(PostType::class);
     }
 
+    public function scopeFilter($q, $search)
+    {
+        return $q->where('name', 'like', '%' . $search . '%')
+            ->orWhere('short_description', 'like', '%' . $search . '%');
+    }
 }

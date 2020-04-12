@@ -32,16 +32,6 @@
                         <input class="form-control m-input" type="text" name="{{ 'name' }}"
                                placeholder="الإسم" required value="{{ isset($item) ? $item->name : "" }}">
                     </div>
-                    <div class="form-group">
-                        <label>وصف قصير</label>
-                        <input class="form-control m-input" type="text" name="{{ 'short_description' }}"
-                               placeholder="وصف قصير" required value="{{ isset($item) ? $item->short_description : "" }}">
-                    </div>
-                    <div class="form-group">
-                        <label>عدد الساعات اليومية</label>
-                        <input class="form-control m-input" type="number" name="{{ 'hours' }}" min="1" max="24"
-                               placeholder="عدد الساعات اليومية" required value="{{ isset($item) ? $item->hours : "" }}">
-                    </div>
 
                 </div>
             </div>
@@ -69,14 +59,14 @@
                         <label>الصورة</label>
                         <div></div>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="imgload" name="image" >
+                            <input type="file" class="custom-file-input" id="imgload" name="image" required >
                             <label class="custom-file-label" for="imgload" id="imgload">Choose file</label>
                         </div>
                     </div>
 
                     <div class="img-responsive">
                         <div class="imageEditProfile">
-                            <img src="{{ url('image/' . getSetting('image')) }}" alt="" id="imgshow" style="max-width: 100%">
+                            <img src="{{ url('image/' . (isset($item) ? $item->data['image'] : "")  ) }}" alt="" id="imgshow" style="max-width: 100%">
                         </div>
                     </div>
 

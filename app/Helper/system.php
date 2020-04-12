@@ -40,7 +40,8 @@ function getDatatable($items, $relations = [])
 }
 
 
-function showLanguagesTabs(){
+function showLanguagesTabs()
+{
     return count(locales()) > 1;
 }
 
@@ -72,6 +73,21 @@ function replace_space_str($str)
 function getSetting($key)
 {
     return \App\Setting::getSetting($key)->value;
+}
+
+function getVedioData($url)
+{
+    $data = [];
+    if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+        $data['embeded_id'] = $match[1];
+        $data['provider'] = 'youtube';
+    }
+//    else if (preg_match('%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $match)) {
+//        $data['embeded_id'] = $match[3];
+//        $data['provider'] = 'vimeo';
+//    }
+
+    return $data;
 }
 
 ?>

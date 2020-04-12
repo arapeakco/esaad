@@ -1,10 +1,10 @@
-@extends('panel.layout.master' , ['title' => 'عن الحملة'])
+@extends('panel.layout.master' , ['title' => 'اضافة'])
 
 @section('content_head')
     <div class="kt-subheader  kt-grid__item" id="kt_subheader">
         <div class="kt-container  kt-container--fluid ">
             <div class="kt-subheader__main">
-                <h3 class="kt-subheader__title">عن الحملة</h3>
+                <h3 class="kt-subheader__title">اضافة</h3>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
         $item = isset($item) ? $item: null;
     @endphp
 
-    {!! Form::open(['method'=> 'POST', 'url'=> url()->current() ,'to'=>url()->current() ,  'class'=>'form-horizontal','id'=>'form']) !!}
+    {!! Form::open(['method'=> isset($item) ? 'PUT' :'POST', 'url'=> url()->current() ,'to'=>url()->current() ,  'class'=>'form-horizontal','id'=>'form']) !!}
 
     @csrf
     <div class="row">
@@ -28,17 +28,16 @@
 
 
                     <div class="form-group">
-                        <label>وصف قصير</label>
-                        <textarea class="form-control"
-                                  name="short_description" required
-                                  placeholder="وصف قصير">{{ isset($item) ? $item->short_description : "" }}</textarea>
+                        <label>الإسم</label>
+                        <input class="form-control" name="name" required
+                                  placeholder="الإسم" value="{{ isset($item) ? $item->name : "" }}">
                     </div>
 
                     <div class="form-group">
                         <label>رابط اليوتيوب</label>
                         <input class="form-control" type="url"
                                name="url" required placeholder="رابط اليوتيوب"
-                               value="{{ isset($item) ? 'https://www.youtube.com/embed/' . $item->data['video'] : "" }}">
+                               value="{{ isset($item) ? ('https://www.youtube.com/embed/' . $item->data['video']) : "" }}">
                     </div>
 
                 </div>

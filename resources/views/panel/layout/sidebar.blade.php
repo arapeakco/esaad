@@ -142,10 +142,10 @@
                                     class="kt-menu__link"><span
                                         class="kt-menu__link-text">التحكم بالموقع</span></span></li>
 
-                            <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.slider.index') }}" class="kt-menu__link "><i
-                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">سلايدر الموقع</span></a></li>
+{{--                            <li class="kt-menu__item " aria-haspopup="true"><a--}}
+{{--                                    href="{{ route('panel.slider.index') }}" class="kt-menu__link "><i--}}
+{{--                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span--}}
+{{--                                        class="kt-menu__link-text">سلايدر الموقع</span></a></li>--}}
 
 
                             <li class="kt-menu__item " aria-haspopup="true"><a
@@ -154,9 +154,27 @@
                                         class="kt-menu__link-text">عن الحملة</span></a></li>
 
                             <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.advocates.index') }}" class="kt-menu__link "><i
+                                    href="{{ route('panel.memberships.index') }}" class="kt-menu__link "><i
                                         class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">دعاة المركز</span></a></li>
+                                        class="kt-menu__link-text">العضويات</span></a></li>
+
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a
+                                    href="{{ route('panel.expenses.index') }}" class="kt-menu__link "><i
+                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                        class="kt-menu__link-text">مصارف الحملة</span></a></li>
+
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a
+                                    href="{{ route('panel.famous.index') }}" class="kt-menu__link "><i
+                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                        class="kt-menu__link-text">مشاهير الحملة</span></a></li>
+
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a
+                                    href="{{ route('panel.recommendations.index') }}" class="kt-menu__link "><i
+                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                        class="kt-menu__link-text">التزكيات</span></a></li>
 
 
 

@@ -40,11 +40,7 @@
                                     إعدادات وسائل التواصل الإجتماعي
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_4">
-                                    الإحصائيات
-                                </a>
-                            </li>
+
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="kt_tabs_5_1" role="tabpanel">
@@ -77,20 +73,20 @@
 
                                 </div>
 
-                                <div class="form-group">
+{{--                                <div class="form-group">--}}
 
-                                    <label>وصف الموقع</label>
-                                    <textarea name="site_description" class="form-control" aria-describedby="emailHelp"
-                                              placeholder="وصف الموقع">{{ getSetting('site_description') }}</textarea>
-                                </div>
+{{--                                    <label>وصف الموقع</label>--}}
+{{--                                    <textarea name="site_description" class="form-control" aria-describedby="emailHelp"--}}
+{{--                                              placeholder="وصف الموقع">{{ getSetting('site_description') }}</textarea>--}}
+{{--                                </div>--}}
 
-                                <div class="form-group">
+{{--                                <div class="form-group">--}}
 
-                                    <label>وصف فوتر الموقع</label>
-                                    <textarea name="site_footer_description" class="form-control"
-                                              aria-describedby="emailHelp"
-                                              placeholder="وصف فوتر الموقع">{{ getSetting('site_footer_description') }}</textarea>
-                                </div>
+{{--                                    <label>وصف فوتر الموقع</label>--}}
+{{--                                    <textarea name="site_footer_description" class="form-control"--}}
+{{--                                              aria-describedby="emailHelp"--}}
+{{--                                              placeholder="وصف فوتر الموقع">{{ getSetting('site_footer_description') }}</textarea>--}}
+{{--                                </div>--}}
 
                                 <div class="form-group">
                                     <label>الكلمات المفتاحية للموقع</label>
@@ -113,7 +109,7 @@
                                     <label>رقم الهاتف</label>
                                     <input type="text" name="phone"
                                            value="{{ getSetting('phone') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="رقم هاتف ماهر">
+                                           aria-describedby="emailHelp" placeholder="رقم الهاتف">
                                 </div>
                                 <div class="form-group">
                                     <label>الفاكس</label>
@@ -137,18 +133,18 @@
                                            value="{{ getSetting('twitter') }}" class="form-control"
                                            aria-describedby="emailHelp" placeholder="تويتر">
                                 </div>
-                                <div class="form-group">
-                                    <label>لينكد ان</label>
-                                    <input type="text" name="linkedIn"
-                                           value="{{ getSetting('linkedIn') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="لينكد ان">
-                                </div>
-                                <div class="form-group">
-                                    <label>واتساب</label>
-                                    <input type="text" name="whatsapp"
-                                           value="{{ getSetting('whatsapp') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="واتساب">
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label>لينكد ان</label>--}}
+{{--                                    <input type="text" name="linkedIn"--}}
+{{--                                           value="{{ getSetting('linkedIn') }}" class="form-control"--}}
+{{--                                           aria-describedby="emailHelp" placeholder="لينكد ان">--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label>واتساب</label>--}}
+{{--                                    <input type="text" name="whatsapp"--}}
+{{--                                           value="{{ getSetting('whatsapp') }}" class="form-control"--}}
+{{--                                           aria-describedby="emailHelp" placeholder="واتساب">--}}
+{{--                                </div>--}}
                                 <div class="form-group">
                                     <label>إنستقرام</label>
                                     <input type="text" name="instagram"
@@ -156,51 +152,22 @@
                                            class="form-control"
                                            aria-describedby="emailHelp" placeholder="إنستقرام">
                                 </div>
-                                <div class="form-group">
-                                    <label>يوتيوب</label>
-                                    <input type="text" name="youtube"
-                                           value="{{ getSetting('youtube') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="يوتيوب">
-                                </div>
-                                <div class="form-group">
-                                    <label>فيمو</label>
-                                    <input type="text" name="viemo"
-                                           value="{{ getSetting('viemo') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="فيمو">
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label>يوتيوب</label>--}}
+{{--                                    <input type="text" name="youtube"--}}
+{{--                                           value="{{ getSetting('youtube') }}" class="form-control"--}}
+{{--                                           aria-describedby="emailHelp" placeholder="يوتيوب">--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label>فيمو</label>--}}
+{{--                                    <input type="text" name="viemo"--}}
+{{--                                           value="{{ getSetting('viemo') }}" class="form-control"--}}
+{{--                                           aria-describedby="emailHelp" placeholder="فيمو">--}}
+{{--                                </div>--}}
 
                             </div>
 
-                            <div class="tab-pane" id="kt_tabs_5_4" role="tabpanel">
-
-                                <div class="form-group">
-                                    <label>مسلم جديد</label>
-                                    <input type="number" name="new_muslim" min="0"
-                                           value="{{ getSetting('new_muslim') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="مسلم جديد">
-                                </div>
-                                <div class="form-group">
-                                    <label>داعية</label>
-                                    <input type="number" name="agitators" min="0"
-                                           value="{{ getSetting('agitators') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="داعية">
-                                </div>
-                                <div class="form-group">
-                                    <label>عمر المركز</label>
-                                    <input type="number" name="center_age" min="0"
-                                           value="{{ getSetting('center_age') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="عمر المركز">
-                                </div>
-                                <div class="form-group">
-                                    <label>البرامج</label>
-                                    <input type="number" name="programmes" min="0"
-                                           value="{{ getSetting('programmes') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="البرامج">
-                                </div>
-
-
-                            </div>
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>

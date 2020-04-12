@@ -14,7 +14,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class AdvocateRequest extends FormRequest
+class ExpensesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class AdvocateRequest extends FormRequest
 
     public function authorize()
     {
-        return auth('admin')->user()->can('add_users');
+        return true;
     }
 
     /**
@@ -39,7 +39,7 @@ class AdvocateRequest extends FormRequest
         return [
             'name' => 'required|string',
             'short_description' => 'required|string',
-            'password' => 'required_unless:_method,PUT|nullable|min:6|confirmed',
+            'image' => 'required_unless:_method,PUT|image',
         ];
 
     }

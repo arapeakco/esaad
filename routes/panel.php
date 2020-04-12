@@ -114,8 +114,8 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
 
 
         Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
-            Route::get('/', ['as' => 'index', 'uses' => 'SettingsController@about']);
-            Route::post('/', ['as' => 'store', 'uses' => 'SettingsController@storeAbout']);
+            Route::get('/', ['as' => 'index', 'uses' => 'AboutController@index']);
+            Route::post('/', ['as' => 'store', 'uses' => 'AboutController@store']);
         });
 
         Route::group(['prefix' => 'slider', 'as' => 'slider.'], function () {
@@ -140,19 +140,68 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
         });
 
 
-        Route::group(['prefix' => 'advocates', 'as' => 'advocates.'], function () {
+        Route::group(['prefix' => 'memberships', 'as' => 'memberships.'], function () {
 
-            Route::get('/', ['as' => 'index', 'uses' => 'AdvocateController@index']);
-            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'AdvocateController@datatable']);
+            Route::get('/', ['as' => 'index', 'uses' => 'MembershipController@index']);
+            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'MembershipController@datatable']);
 
             Route::group(['prefix' => 'create'], function () {
-                Route::get('/', ['as' => 'create', 'uses' => 'AdvocateController@create']);
-                Route::post('/', ['as' => 'store', 'uses' => 'AdvocateController@store']);
+                Route::get('/', ['as' => 'create', 'uses' => 'MembershipController@create']);
+                Route::post('/', ['as' => 'store', 'uses' => 'MembershipController@store']);
             });
             Route::group(['prefix' => '{id}'], function () {
-                Route::get('/edit', ['as' => 'edit', 'uses' => 'AdvocateController@edit']);
-                Route::put('/edit', ['as' => 'update', 'uses' => 'AdvocateController@update']);
-                Route::delete('/', ['as' => 'destry', 'uses' => 'AdvocateController@destroy']);
+                Route::get('/edit', ['as' => 'edit', 'uses' => 'MembershipController@edit']);
+                Route::put('/edit', ['as' => 'update', 'uses' => 'MembershipController@update']);
+                Route::delete('/', ['as' => 'destry', 'uses' => 'MembershipController@destroy']);
+            });
+        });
+
+
+        Route::group(['prefix' => 'expenses', 'as' => 'expenses.'], function () {
+
+            Route::get('/', ['as' => 'index', 'uses' => 'ExpensesController@index']);
+            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'ExpensesController@datatable']);
+
+            Route::group(['prefix' => 'create'], function () {
+                Route::get('/', ['as' => 'create', 'uses' => 'ExpensesController@create']);
+                Route::post('/', ['as' => 'store', 'uses' => 'ExpensesController@store']);
+            });
+            Route::group(['prefix' => '{id}'], function () {
+                Route::get('/edit', ['as' => 'edit', 'uses' => 'ExpensesController@edit']);
+                Route::put('/edit', ['as' => 'update', 'uses' => 'ExpensesController@update']);
+                Route::delete('/', ['as' => 'destry', 'uses' => 'ExpensesController@destroy']);
+            });
+        });
+
+        Route::group(['prefix' => 'famous', 'as' => 'famous.'], function () {
+
+            Route::get('/', ['as' => 'index', 'uses' => 'FamousController@index']);
+            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'FamousController@datatable']);
+
+            Route::group(['prefix' => 'create'], function () {
+                Route::get('/', ['as' => 'create', 'uses' => 'FamousController@create']);
+                Route::post('/', ['as' => 'store', 'uses' => 'FamousController@store']);
+            });
+            Route::group(['prefix' => '{id}'], function () {
+                Route::get('/edit', ['as' => 'edit', 'uses' => 'FamousController@edit']);
+                Route::put('/edit', ['as' => 'update', 'uses' => 'FamousController@update']);
+                Route::delete('/', ['as' => 'destry', 'uses' => 'FamousController@destroy']);
+            });
+        });
+
+        Route::group(['prefix' => 'recommendations', 'as' => 'recommendations.'], function () {
+
+            Route::get('/', ['as' => 'index', 'uses' => 'RecommendationController@index']);
+            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'RecommendationController@datatable']);
+
+            Route::group(['prefix' => 'create'], function () {
+                Route::get('/', ['as' => 'create', 'uses' => 'RecommendationController@create']);
+                Route::post('/', ['as' => 'store', 'uses' => 'RecommendationController@store']);
+            });
+            Route::group(['prefix' => '{id}'], function () {
+                Route::get('/edit', ['as' => 'edit', 'uses' => 'RecommendationController@edit']);
+                Route::put('/edit', ['as' => 'update', 'uses' => 'RecommendationController@update']);
+                Route::delete('/', ['as' => 'destry', 'uses' => 'RecommendationController@destroy']);
             });
         });
 
@@ -170,9 +219,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
 
         Route::resource('settings', 'SettingsController')->except(['create', 'edit', 'show', 'destroy']);
 
-//        Route::resource('slider' , 'SliderController')->except(['show' , 'edit' , 'update' ]);
-//        Route::post('slider/update-visiblity/{id}' , 'SliderController@updateVisiblity')->name('slider.updateVisiblity');
-
+ 
     });
 
 

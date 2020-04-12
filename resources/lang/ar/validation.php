@@ -98,7 +98,8 @@ return [
     'regex' => 'The :attribute format is invalid.',
     'required' => ' :attribute مطلوب',
     'required_if' => 'The :attribute field is required when :other is :value.',
-    'required_unless' => 'The :attribute field is required unless :other is in :values.',
+    'required_unless' => ' :attribute  مطلوب',
+//    'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
     'required_with_all' => 'The :attribute field is required when :values are present.',
     'required_without' => 'يرجى ادخال :attribute او :values ',
@@ -167,33 +168,6 @@ return [
         'subject' => 'الموضوع',
         'role' => 'الصلاحيات',
 
-        // user student
-
-        'age' => 'العمر',
-        'level' => 'المرحلة الدراسية',
-        'school' => 'اسم المدرسة',
-        'unversity' => 'اسم الجامعة',
-        'start_year' => 'سنة البدء في الدراسة',
-        'graduated_year' => 'سنة التخرج المتوقعة',
-
-        // user consumer
-        'qualification' => 'المؤهل',
-        'job' => 'المهنة',
-
-
-        // user government
-        'company' => 'الشركة',
-        'companyName' => 'اسم الشركة',
-        'stablishment_data' => 'تاريخ التأسيس',
-        'owners' => 'الملاك',
-        'section' => 'القطاع',
-
-        // user factory
-        'activity' => 'نشاط المصنع',
-        'address' => 'المكان',
-
-        // user media
-        'type' => 'نوع المجال',
 
         // pages
 
@@ -207,9 +181,10 @@ return [
 
 
 
-
-        'fieldName'   => 'اسم المجال',
-        'icon'   => 'ايقونة المجال',
+        'short_description'   => 'الوصف قصير',
+        'url'   => 'الرابط',
+        'image'   => 'الصورة',
+        'specialization'   => 'المهنة',
 
 
     ],

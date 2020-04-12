@@ -52,9 +52,9 @@
                             <div class="tab-pane {{$i==1?'active':''}}" id="kt_tabs_{{$i}}" role="tabpanel">
 
                                 <div class="form-group">
-                                    <label>السؤال</label>
+                                    <label>الإسم</label>
                                     <input class="form-control m-input" type="text" name="{{ 'name_'.$key }}"
-                                           placeholder="السؤال" required value="{{ isset($item) ? $item->getTranslation($key)->name : "" }}">
+                                           placeholder="الإسم" required value="{{ isset($item) ? $item->getTranslation($key)->name : "" }}">
 
                                 </div>
                             </div>
