@@ -80,14 +80,14 @@
                                               placeholder="العنوان">{{ getSetting('address') }}</textarea>
                                 </div>
 
-{{--                                <div class="form-group">--}}
 
-{{--                                    <label>وصف فوتر الموقع</label>--}}
-{{--                                    <textarea name="site_footer_description" class="form-control"--}}
-{{--                                              aria-describedby="emailHelp"--}}
-{{--                                              placeholder="وصف فوتر الموقع">{{ getSetting('site_footer_description') }}</textarea>--}}
-{{--                                </div>--}}
-
+                                <div class="form-group">
+                                    <label>حقوق الموقع</label>
+                                    <textarea name="copy_rights"
+                                              class="form-control"
+                                              aria-describedby="emailHelp"
+                                              placeholder="وصف فوتر الموقع">{{ getSetting('copy_rights') }}</textarea>
+                                </div>
                                 <div class="form-group">
                                     <label>الكلمات المفتاحية للموقع</label>
                                     <input id="kt_tagify_1" name='site_tags' placeholder='الكلمات المفتاحية للموقع ...'
@@ -133,18 +133,18 @@
                                            value="{{ getSetting('twitter') }}" class="form-control"
                                            aria-describedby="emailHelp" placeholder="تويتر">
                                 </div>
-{{--                                <div class="form-group">--}}
-{{--                                    <label>لينكد ان</label>--}}
-{{--                                    <input type="text" name="linkedIn"--}}
-{{--                                           value="{{ getSetting('linkedIn') }}" class="form-control"--}}
-{{--                                           aria-describedby="emailHelp" placeholder="لينكد ان">--}}
-{{--                                </div>--}}
-{{--                                <div class="form-group">--}}
-{{--                                    <label>واتساب</label>--}}
-{{--                                    <input type="text" name="whatsapp"--}}
-{{--                                           value="{{ getSetting('whatsapp') }}" class="form-control"--}}
-{{--                                           aria-describedby="emailHelp" placeholder="واتساب">--}}
-{{--                                </div>--}}
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label>لينكد ان</label>--}}
+                                {{--                                    <input type="text" name="linkedIn"--}}
+                                {{--                                           value="{{ getSetting('linkedIn') }}" class="form-control"--}}
+                                {{--                                           aria-describedby="emailHelp" placeholder="لينكد ان">--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label>واتساب</label>--}}
+                                {{--                                    <input type="text" name="whatsapp"--}}
+                                {{--                                           value="{{ getSetting('whatsapp') }}" class="form-control"--}}
+                                {{--                                           aria-describedby="emailHelp" placeholder="واتساب">--}}
+                                {{--                                </div>--}}
                                 <div class="form-group">
                                     <label>إنستقرام</label>
                                     <input type="text" name="instagram"
@@ -152,22 +152,22 @@
                                            class="form-control"
                                            aria-describedby="emailHelp" placeholder="إنستقرام">
                                 </div>
-{{--                                <div class="form-group">--}}
-{{--                                    <label>يوتيوب</label>--}}
-{{--                                    <input type="text" name="youtube"--}}
-{{--                                           value="{{ getSetting('youtube') }}" class="form-control"--}}
-{{--                                           aria-describedby="emailHelp" placeholder="يوتيوب">--}}
-{{--                                </div>--}}
-{{--                                <div class="form-group">--}}
-{{--                                    <label>فيمو</label>--}}
-{{--                                    <input type="text" name="viemo"--}}
-{{--                                           value="{{ getSetting('viemo') }}" class="form-control"--}}
-{{--                                           aria-describedby="emailHelp" placeholder="فيمو">--}}
-{{--                                </div>--}}
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label>يوتيوب</label>--}}
+                                {{--                                    <input type="text" name="youtube"--}}
+                                {{--                                           value="{{ getSetting('youtube') }}" class="form-control"--}}
+                                {{--                                           aria-describedby="emailHelp" placeholder="يوتيوب">--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label>فيمو</label>--}}
+                                {{--                                    <input type="text" name="viemo"--}}
+                                {{--                                           value="{{ getSetting('viemo') }}" class="form-control"--}}
+                                {{--                                           aria-describedby="emailHelp" placeholder="فيمو">--}}
+                                {{--                                </div>--}}
 
                             </div>
 
-                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -182,16 +182,16 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="kt-portlet">--}}
-{{--                    <div class="kt-portlet__body ">--}}
+                {{--                <div class="kt-portlet">--}}
+                {{--                    <div class="kt-portlet__body ">--}}
 
-{{--                        <input type="hidden" id="startLat" name="latitude" value="{{ \App\Setting::getSetting('latitude')->value }}">--}}
-{{--                        <input type="hidden" id="startLon" name="longitude" value="{{ \App\Setting::getSetting('longitude')->value }}">--}}
+                {{--                        <input type="hidden" id="startLat" name="latitude" value="{{ \App\Setting::getSetting('latitude')->value }}">--}}
+                {{--                        <input type="hidden" id="startLon" name="longitude" value="{{ \App\Setting::getSetting('longitude')->value }}">--}}
 
-{{--                        <div id="map" style="height: 350px;"></div>--}}
+                {{--                        <div id="map" style="height: 350px;"></div>--}}
 
-{{--                    </div>--}}
-{{--                </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
             </div>
 
 
@@ -206,43 +206,43 @@
     <script src="{{ asset('panelAssets/js/tagify.js') }}" type="text/javascript"></script>
 
 
-{{--    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAIiPJXATL1VQa0KhqL9eWDo834B6v9O2M" type="text/javascript"></script>--}}
-{{--    <script src="{{ asset('panelAssets/js/gmaps.js') }}" type="text/javascript"></script>--}}
+    {{--    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAIiPJXATL1VQa0KhqL9eWDo834B6v9O2M" type="text/javascript"></script>--}}
+    {{--    <script src="{{ asset('panelAssets/js/gmaps.js') }}" type="text/javascript"></script>--}}
 
-{{--    <script>--}}
+    {{--    <script>--}}
 
-{{--        $(document).ready(function () {--}}
+    {{--        $(document).ready(function () {--}}
 
-{{--            var GoogleMapsDemo = {--}}
-{{--                init: function () {--}}
-{{--                    var location  = {lat: parseFloat( $('#startLat').val() ), lng: parseFloat($('#startLon').val()) };--}}
-{{--                    map = new google.maps.Map(document.getElementById('map'), {--}}
-{{--                        center: location,--}}
-{{--                        zoom: 15,--}}
-{{--                    });--}}
-{{--                    var marker = new google.maps.Marker({--}}
-{{--                        position: location,--}}
-{{--                        map: map,--}}
-{{--                        draggable:true,--}}
-{{--                        animation: google.maps.Animation.DROP,--}}
+    {{--            var GoogleMapsDemo = {--}}
+    {{--                init: function () {--}}
+    {{--                    var location  = {lat: parseFloat( $('#startLat').val() ), lng: parseFloat($('#startLon').val()) };--}}
+    {{--                    map = new google.maps.Map(document.getElementById('map'), {--}}
+    {{--                        center: location,--}}
+    {{--                        zoom: 15,--}}
+    {{--                    });--}}
+    {{--                    var marker = new google.maps.Marker({--}}
+    {{--                        position: location,--}}
+    {{--                        map: map,--}}
+    {{--                        draggable:true,--}}
+    {{--                        animation: google.maps.Animation.DROP,--}}
 
-{{--                    });--}}
+    {{--                    });--}}
 
 
-{{--                    google.maps.event.addListener(marker, 'position_changed' , function () {--}}
-{{--                        var lat = marker.getPosition().lat();--}}
-{{--                        var lng = marker.getPosition().lng();--}}
-{{--                        $('#startLon').val(lng);--}}
-{{--                        $('#startLat').val(lat);--}}
-{{--                    });--}}
-{{--                }--}}
-{{--            };--}}
-{{--            jQuery(document).ready(function () {--}}
-{{--                GoogleMapsDemo.init()--}}
-{{--            });--}}
-{{--        });--}}
+    {{--                    google.maps.event.addListener(marker, 'position_changed' , function () {--}}
+    {{--                        var lat = marker.getPosition().lat();--}}
+    {{--                        var lng = marker.getPosition().lng();--}}
+    {{--                        $('#startLon').val(lng);--}}
+    {{--                        $('#startLat').val(lat);--}}
+    {{--                    });--}}
+    {{--                }--}}
+    {{--            };--}}
+    {{--            jQuery(document).ready(function () {--}}
+    {{--                GoogleMapsDemo.init()--}}
+    {{--            });--}}
+    {{--        });--}}
 
-{{--    </script>--}}
+    {{--    </script>--}}
 
     <script>
         $("#imgload").change(function () {

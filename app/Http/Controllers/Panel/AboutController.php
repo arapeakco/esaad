@@ -29,6 +29,8 @@ class AboutController extends Controller
 
         if ($file = $request->file('image')) {
             $arr['image'] = $file->store('images');
+        }else{
+            $arr['image'] = @$item->data['image'];
         }
         $data['data'] = $arr;
         Post::query()->updateOrCreate(['id' => @$item->id ] , $data);

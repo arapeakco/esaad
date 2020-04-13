@@ -36,7 +36,7 @@ class ContactRequest extends FormRequest
     {
         throw new HttpResponseException(response()->json([
             'status' => StatusCodes::VALIDATION_ERROR,
-            'msg' => $validator->errors()->first()
+            'message' => $validator->errors()->first()
         ], StatusCodes::VALIDATION_ERROR));
     }
 }

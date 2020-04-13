@@ -64,7 +64,7 @@
                         <label>الصورة</label>
                         <div></div>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="imgload" name="image" {{ isset($item) && @$item->data['image'] ? "required" : ""  }} >
+                            <input type="file" class="custom-file-input" id="imgload" name="image" {{ isset($item) && @$item->data['image'] ? "" : "required"  }} >
                             <label class="custom-file-label" for="imgload" id="imgload">Choose file</label>
                         </div>
                     </div>

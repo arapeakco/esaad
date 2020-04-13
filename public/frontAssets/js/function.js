@@ -118,3 +118,69 @@ wow = new WOW(
   }
 )
 wow.init();
+
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+window.addEventListener('load', (event) => {
+    $.ajax({
+        url: "/faqs",
+        method: "get",
+        success: function (response) {
+            $('#accordion').append(response.data.html);
+            if (!response.data.next) {
+                $('#more').addClass('d-none');
+            } else {
+                $('#more').data('url', response.data.next);
+            }
+        }
+    })
+});
+
+$(document).on('click', 'a#more', function () {
+    $.ajax({
+        url: $(this).data('url'),
+        method: "get",
+        success: function (response) {
+            $('#accordion').append(response.data.html);
+            if (!response.data.next) {
+                $('#more').addClass('d-none');
+            } else {
+                $('#more').data('url', response.data.next);
+            }
+        }
+    })
+});
+
+$('#contact').submit(function (e) {
+
+    e.preventDefault();
+
+    var fd = new FormData(this);
+
+    if($(this).valid()){
+        $.ajax({
+            url: '/contact',
+            method: "post",
+            data : fd,
+            contentType:false,
+            processData: false,
+            success: function (response) {
+                $('#response_msg').text(response.message).addClass('text-success').removeClass('text-danger d-none');
+            },
+            error : function (response) {
+                $('#response_msg').text(response.responseJSON.message).removeClass('text-sucess d-none').addClass('text-danger');
+            }
+        })
+    }
+
+});
+
+$('#ModalVideoMaster').on('show.bs.modal', function(e) {
+     var url = $(e.relatedTarget).data('url');
+     $(this).find('iframe').attr('src' , url);
+});

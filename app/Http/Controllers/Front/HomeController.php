@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Constants\StatusCodes;
+use App\Contact;
 use App\Faq;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
@@ -36,6 +37,7 @@ class HomeController extends Controller
 
     public function storeContact(ContactRequest $request)
     {
-        dd($request);
+        Contact::create($request->all());
+        return $this->response_api(true, __('front.msgSent') , StatusCodes::OK);
     }
 }

@@ -46,11 +46,16 @@ class FamousController extends Controller
     public function update(FamousRequest $request, $id)
     {
         $data = $request->all();
+        $item = Post::find($id);
         $data['post_type_id'] = 4;
         $arr['video'] = @getVedioData($data['url'])['embeded_id'];
 
-        if ($file = $request->file('image'))
+        if ($file = $request->file('image')){
             $arr['image'] =  $file->store('images');
+        }
+        else{
+            $arr['image'] = @$item->data['image'];
+        }
         $data['data'] = $arr ;
 
         Post::updateOrCreate(['id' => $id], $data);
