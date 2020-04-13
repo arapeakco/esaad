@@ -27,9 +27,12 @@ class MembershipController extends Controller
         $data = $request->all();
         $data['post_type_id'] = 2;
 
+        $arr = ['price' => $data['price']];
         if ($file = $request->file('image')) {
-            $data['data'] = ['image' => $file->store('images')];
+            $arr['image'] =  $file->store('images');
         }
+        $data['data'] = $arr;
+
         Post::create($data);
         return $this->response_api(true, __('front.success'), StatusCodes::OK);
     }
@@ -43,9 +46,17 @@ class MembershipController extends Controller
     public function update(MembershipRequest $request, $id)
     {
         $data = $request->all();
+        $item = Post::find($id);
         $data['post_type_id'] = 2;
-        if ($file = $request->file('image'))
-            $data['data'] = ['image' => $file->store('images')];
+
+        $arr = ['price' => $data['price']];
+        if ($file = $request->file('image')) {
+            $arr['image'] =  $file->store('images');
+        }else{
+            $arr['image'] = @$item->data['image'];
+        }
+
+        $data['data'] = $arr;
 
         Post::updateOrCreate(['id' => $id], $data);
         return $this->response_api(true, __('front.success'), StatusCodes::OK);

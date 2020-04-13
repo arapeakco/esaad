@@ -205,7 +205,23 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
             });
         });
 
-
+//
+//        Route::group(['prefix' => 'transactions', 'as' => 'transactions.' ], function () {
+//
+//            Route::get('/', ['as' => 'index', 'uses' => 'RoleController@index']);
+//            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'RoleController@datatable']);
+//
+//            Route::group(['prefix' => 'create'], function () {
+//                Route::get('/', ['as' => 'create', 'uses' => 'RoleController@create']);
+//                Route::post('/', ['as' => 'store', 'uses' => 'RoleController@store']);
+//            });
+//
+//            Route::group(['prefix' => '{id}'], function () {
+//                Route::get('/edit', ['as' => 'edit', 'uses' => 'RoleController@edit']);
+//                Route::put('/edit', ['as' => 'update', 'uses' => 'RoleController@update']);
+//                Route::delete('/', ['as' => 'destry', 'uses' => 'RoleController@destroy']);
+//            });
+//        });
 
         Route::group(['prefix' => 'contacts', 'as' => 'contacts.'], function () {
             Route::get('/' , ['as' => 'index' , 'uses' => 'ContactController@index']);
@@ -219,7 +235,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
 
         Route::resource('settings', 'SettingsController')->except(['create', 'edit', 'show', 'destroy']);
 
- 
+
     });
 
 

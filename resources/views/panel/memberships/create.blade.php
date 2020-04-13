@@ -33,6 +33,14 @@
                                placeholder="الإسم" required value="{{ isset($item) ? $item->name : "" }}">
                     </div>
 
+
+                    <div class="form-group">
+                        <label>السعر</label>
+                        <input class="form-control m-input" type="number" name="{{ 'price' }}"
+                               placeholder="السعر" required value="{{ isset($item) ? @$item->data['price'] : "" }}">
+                    </div>
+
+
                 </div>
             </div>
 
@@ -59,7 +67,7 @@
                         <label>الصورة</label>
                         <div></div>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="imgload" name="image" {{ isset($item) && @$item->data['image'] ? "required" : ""  }}  >
+                            <input type="file" class="custom-file-input" id="imgload" name="image" {{ isset($item) && @$item->data['image'] ? "" : "required"  }}  >
                             <label class="custom-file-label" for="imgload" id="imgload">Choose file</label>
                         </div>
                     </div>

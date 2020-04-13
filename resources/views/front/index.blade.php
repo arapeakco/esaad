@@ -76,6 +76,9 @@
                                     <div class="widget__item-body">
                                         <div class="widget__item-title">{{ $post->name }}</div>
                                         <a href="" data-toggle="modal" data-target="#ModalPayment"
+                                           data-image="{{ url('image/' . @$post->data['image'] . '/50x50') }}"
+                                           data-name="{{ $post->name }}" data-price="{{  @$post->data['price'] }}"
+                                           data-id="{{ $post->id }}"
                                            class="widget__item-action">ادعم الآن</a>
                                     </div>
                                 </div>
@@ -138,27 +141,27 @@
             <h3 class="section-title wow fadeInUp" data-wow-duration="1s"
                 data-wow-delay="0.1s">{{ @$famous->name }} </h3>
 
-                @if (@$famous->posts->count())
-                    <div class="slider-famous   owl-carousel owl-theme">
-                        @foreach($famous->posts as $singlePost)
-                            <div class="entry-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                                <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideo">
-                                    <picture>
-                                        <img src="{{ url('image/' . @$singlePost->data['image'] . '/333x366') }}"
-                                             alt="{{ $singlePost->name }}">
-                                    </picture>
-                                    <div class="playVideo">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div class="entry-box-body">
-                                    <h3 class="entry-box-title">{{ $singlePost->name }}</h3>
+            @if (@$famous->posts->count())
+                <div class="slider-famous   owl-carousel owl-theme">
+                    @foreach($famous->posts as $singlePost)
+                        <div class="entry-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideo">
+                                <picture>
+                                    <img src="{{ url('image/' . @$singlePost->data['image'] . '/333x366') }}"
+                                         alt="{{ $singlePost->name }}">
+                                </picture>
+                                <div class="playVideo">
+                                    <i class="fas fa-play"></i>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
+                            <div class="entry-box-body">
+                                <h3 class="entry-box-title">{{ $singlePost->name }}</h3>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
     </section>
     <!-- End Section famous-->
 

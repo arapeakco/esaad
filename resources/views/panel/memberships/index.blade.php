@@ -89,7 +89,6 @@
 
         window.columns = [
             {
-
                 field: 'image',
                 title: "الصورة",
                 textAlign: "center",
@@ -99,13 +98,20 @@
                     } else {
                         return '<a href="{{ asset('panelAssets/media/users/default.jpg') }}" data-fancybox ><img  src="{{ asset('panelAssets/media/users/default.jpg') }}" style="border-radius:50%" ></a>';
                     }
-
                 }
             },
             {
                 field: 'name',
                 title: "الإسم",
                 textAlign: "center",
+            },
+            {
+                field: 'price',
+                title: "السعر",
+                textAlign: "center",
+                template: function (data) {
+                    return data.data['price']??0;
+                }
             },
             {
                 field: 'Actions',

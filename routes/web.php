@@ -20,3 +20,8 @@ Route::get('image/{folder}/{path}/{size?}', 'MediaController@photo');
 Route::get('/', 'Front\HomeController@index');
 Route::get('/faqs', 'Front\HomeController@faqsAjax');
 Route::post('/contact', 'Front\HomeController@storeContact');
+
+
+Route::post('/pay' , 'Front\TransactionController@store');
+Route::get('/pay/status' , 'Front\TransactionController@status');
+

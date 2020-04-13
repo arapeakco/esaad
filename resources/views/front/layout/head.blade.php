@@ -27,5 +27,6 @@
 <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css"/>
 <link rel="stylesheet" href="{{ asset('frontAssets/css/animate.min.css') }}"/>
 <link rel="stylesheet" href="{{ asset('frontAssets/css/owl.carousel.min.css') }}"/>
+<link rel="stylesheet" href="{{ asset('frontAssets/css/sweetalert.min.css') }}"/>
 <link rel="stylesheet" href="{{ asset('frontAssets/css/bootstrap.css') }}"/>
 <link rel="stylesheet" href="{{ asset('frontAssets/css/main.css') }}"/>

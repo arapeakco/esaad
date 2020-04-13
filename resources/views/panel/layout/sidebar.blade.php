@@ -182,6 +182,15 @@
                     </div>
                 </li>
 
+{{--                <li class="kt-menu__item " aria-haspopup="true">--}}
+{{--                    <a href="{{ route('panel.transactions.index') }}" class="kt-menu__link ">--}}
+{{--                        <i class="kt-menu__link-icon fa fa-lock">--}}
+{{--                            <span></span>--}}
+{{--                        </i>--}}
+{{--                        <span class="kt-menu__link-text">الحركات المالية</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+
 
 
                 @can('manage_faqs')
