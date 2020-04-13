@@ -18,3 +18,5 @@ Route::get('image/{folder}/{path}/{size?}', 'MediaController@photo');
 
 
 Route::get('/', 'Front\HomeController@index');
+Route::get('/faqs', 'Front\HomeController@faqsAjax');
+Route::post('/contact', 'Front\HomeController@storeContact');

@@ -40,7 +40,7 @@
 $('.ModalVideo').on('hidden.bs.modal', function (e) {
   jQuery(".ModalVideo iframe").attr("src", jQuery("#ModalVideo iframe").attr("src"));
 })
-// 
+//
 
 
 $(window).scroll(function () {
@@ -57,7 +57,7 @@ $('.main-header a[data-scroll] ').click(function (e) {
   e.preventDefault();
 
 
- 
+
 
     $('html, body').animate({
       scrollTop: $('#' + $(this).data('scroll')).offset().top -40
@@ -81,7 +81,11 @@ $(window).scroll(function () {
   }
 });
 
-
+$('.menu-link-footer a[data-scroll] ').click(function (e) {
+    $('html, body').animate({
+        scrollTop: $('#' + $(this).data('scroll')).offset().top -40
+    }, 1100);
+});
 
 }(jQuery));
 

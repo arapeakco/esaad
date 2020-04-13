@@ -191,52 +191,14 @@
     <!-- End Section famous-->
 
     <!-- Start Section faq -->
-    <section class="section-faq layout" id="section-faq">
+    <section class="section-faq layout" id="section7">
         <div class="container">
             <h3 class="section-title mb-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">الأسئلة الشائعة</h3>
             <div class="row">
                 <div class="col-lg-10">
                     <div class="wow fadeInUp accordion shape" id="accordion" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="card card-faq">
-                            <div class="card-header">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link arrow collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">سوال افتراضي لشرح افتراضي</button>
-                                </h5>
-                            </div>
-                            <div class="collapse" id="collapse-1" data-parent="#accordion">
-                                <div class="card-body">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.</div>
-                            </div>
-                        </div>
-                        <div class="card card-faq">
-                            <div class="card-header">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link arrow collapsed" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false">سوال افتراضي لشرح افتراضي</button>
-                                </h5>
-                            </div>
-                            <div class="collapse" id="collapse-2" data-parent="#accordion">
-                                <div class="card-body">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.</div>
-                            </div>
-                        </div>
-                        <div class="card card-faq">
-                            <div class="card-header">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link arrow collapsed" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false">سوال افتراضي لشرح افتراضي</button>
-                                </h5>
-                            </div>
-                            <div class="collapse" id="collapse-3" data-parent="#accordion">
-                                <div class="card-body">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.</div>
-                            </div>
-                        </div>
-                        <div class="card card-faq">
-                            <div class="card-header">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link arrow collapsed" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false">سوال افتراضي لشرح افتراضي</button>
-                                </h5>
-                            </div>
-                            <div class="collapse" id="collapse-4" data-parent="#accordion">
-                                <div class="card-body">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.</div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -246,7 +208,7 @@
                 </div>
             </div>
             <div class="text-center mt-2">
-                <a href="" class="btn btn-more wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">المزيد</a>
+                <a href="javascript:;" id="more" data-url=" " class="btn btn-more wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">المزيد</a>
             </div>
         </div>
     </section>

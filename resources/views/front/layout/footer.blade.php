@@ -12,10 +12,10 @@
             </div>
             <div class="col-lg-2">
                 <h3 class="title-footer">القائمة</h3>
-                <ul class="link-footer">
+                <ul class="link-footer menu-link-footer">
                     @if(getMenuItems())
                         @foreach(getMenuItems() as $index => $item)
-                            <li><a href="javascript:;">{{ $item->name }}</a></li>
+                            <li class="menu_item"><a class="menu_link {{ $index == 0 ? 'active' : '' }}" data-scroll="{{ 'section' .($index+1) }}"><span class="menu_link-text">{{ $item->name }}</span></a></li>
                         @endforeach
                     @endif
 
