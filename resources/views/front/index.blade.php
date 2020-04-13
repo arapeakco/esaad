@@ -155,8 +155,8 @@
     <section class="section-recom layout" id="section6">
         <div class="container">
             <h3 class="section-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">{{ @$recommendations->name }} </h3>
+            @if (@$recommendations->posts()->count())
             <div class="content">
-                @if (@$recommendations->posts()->count())
                 <div class="slider-recom owl-carousel owl-theme">
                     @foreach($recommendations->posts as $rec )
                         <div class="entry-box-2  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
@@ -176,8 +176,8 @@
                         </div>
                     @endforeach
                 </div>
-                @endif
             </div>
+            @endif
         </div>
     </section>
     <!-- End Section famous-->
