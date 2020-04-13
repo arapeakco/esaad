@@ -84,7 +84,20 @@
         window.data_url = '{{ route('panel.famous.datatable') }}';
 
         window.columns = [
+            {
 
+                field: 'image',
+                title: "الصورة",
+                textAlign: "center",
+                template: function (data) {
+                    if (data.data['image']) {
+                        return '<a href="{{ url('image/') }}/' + data.data['image'] + '" data-fancybox ><img  src="{{ url('image/') }}/' + data.data['image'] + '/80x80"  style="border-radius:50%" ></a>';
+                    } else {
+                        return '<a href="{{ asset('panelAssets/media/users/default.jpg') }}" data-fancybox ><img  src="{{ asset('panelAssets/media/users/default.jpg') }}" style="border-radius:50%" ></a>';
+                    }
+
+                }
+            },
             {
                 field: 'name',
                 title: "الإسم",
