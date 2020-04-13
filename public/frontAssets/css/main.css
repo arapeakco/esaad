@@ -1718,7 +1718,7 @@ label.error {
     .text-faq {
         display: none;
     }
-    .shape, .section-recom .content::before, .section-recom .content::after {
+    .shape::before, .section-recom .content::before, .section-recom .content::after {
         display: none;
     }
     .entry-box-2 {
