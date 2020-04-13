@@ -35,9 +35,9 @@
             <div class="col-lg-4">
                 <h3 class="title-footer">تواصل معنا</h3>
                 <p>ضع رجم جوالك، لنتمكن من إعادة الإتصا بك </p>
-                <form action="">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="رقم جوالك">
+                <form action="" class="form-contact">
+                    <div class="form-group mb-4 pb-2">
+                        <input type="text" class="form-control" name="phone" placeholder="رقم جوالك">
                     </div>
                     <div class="form-group mt-4">
                         <button type="submit" class="general_btn_lg ">اطلب تواصل</button>

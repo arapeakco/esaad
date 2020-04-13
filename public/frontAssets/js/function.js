@@ -87,6 +87,26 @@ $('.menu-link-footer a[data-scroll] ').click(function (e) {
     }, 1100);
 });
 
+
+
+
+
+$('.form-contact').validate({
+    rules: {
+      phone: {
+        required: true,
+        number:true
+      },
+    },
+    messages: {
+        phone: {
+        required: 'يرجى ادخال رقم الهاتف',
+        number:'يرجى ادخال رقم هاتف صالح'
+      },
+    }
+  });
+
+
 }(jQuery));
 
 
