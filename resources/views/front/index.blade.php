@@ -6,14 +6,14 @@
 <body>
 <!-- begin:: Page -->
 <div class="main-wrapper">
-{{--    <div class="loader-page">--}}
-{{--        <div class="lds-ellipsis">--}}
-{{--            <div></div>--}}
-{{--            <div></div>--}}
-{{--            <div></div>--}}
-{{--            <div></div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+   <div class="loader-page">
+       <div class="lds-ellipsis">
+          <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+       </div>
+   </div>
     <div class="mobile-menu-overlay"></div>
 
     @include('front.layout.header')
@@ -211,7 +211,7 @@
     <!-- begin:: copy-right -->
     <div class="copyRight">
         <div class="container">
-            <p>جمعية الحقوق محفوظة </p>
+            <p>جميع الحقوق محفوظة </p>
         </div>
     </div>
 </div>
