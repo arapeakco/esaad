@@ -1,3 +1,17 @@
+<div class="modal fade " id="ModalSuccess" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body py-5 text-center">
+            <img src="images/checked.png" alt="" class="mb-4">
+            <h3>سيتم التواصل معك قريبا باذن الله</h3>
+        </div>
+    </div>
+    </div>
+</div>
+
 <div class="modal fade ModalVideo" id="ModalVideoMaster" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
