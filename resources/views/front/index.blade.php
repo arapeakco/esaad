@@ -128,28 +128,25 @@
     <section class="section-famous layout" id="section5">
         <div class="container">
             <h3 class="section-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">{{ @$famous->name }} </h3>
-            <div class="row">
-
-                @if (@$famous->posts->count())
-                    @foreach($famous->posts as $singlePost)
-                        <div class="col-lg-4">
-                            <div class="entry-box wow fadeInUp"  data-wow-duration="1s" data-wow-delay="0.1s">
-                                <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideo" >
-                                    <picture>
-                                        <img src="{{ url('image/' . @$singlePost->data['image'] . '/333x366') }}" alt="{{ $singlePost->name }}">
-                                    </picture>
-                                    <div class="playVideo">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                </div>
-                                <div class="entry-box-body">
-                                    <h3 class="entry-box-title">{{ $singlePost->name }}</h3>
-                                </div>
-                            </div>
+            @if (@$famous->posts->count())
+            <div class="slider-famous   owl-carousel owl-theme">
+                @foreach($famous->posts as $singlePost)
+                <div class="entry-box wow fadeInUp"  data-wow-duration="1s" data-wow-delay="0.1s">
+                    <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideo" >
+                        <picture>
+                            <img src="{{ url('image/' . @$singlePost->data['image'] . '/333x366') }}" alt="{{ $singlePost->name }}">
+                        </picture>
+                        <div class="playVideo">
+                            <i class="fas fa-play"></i>
                         </div>
-                    @endforeach
-                @endif
+                    </div>
+                    <div class="entry-box-body">
+                        <h3 class="entry-box-title">{{ $singlePost->name }}</h3>
+                    </div>
+                </div>
+                @endforeach
             </div>
+            @endif
         </div>
     </section>
     <!-- End Section famous-->
@@ -159,32 +156,27 @@
         <div class="container">
             <h3 class="section-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">{{ @$recommendations->name }} </h3>
             <div class="content">
-                <div class="row">
+                @if (@$recommendations->posts()->count())
+                <div class="slider-recom owl-carousel owl-theme">
+                    @foreach($recommendations->posts as $rec )
+                        <div class="entry-box-2  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <div class="entry-box-text">
+                                {{ @$rec->short_description }}
 
-                    @if (@$recommendations->posts()->count())
-                        @foreach($recommendations->posts as $rec )
-                            <div class="col-lg-4">
-                                <div class="entry-box-2  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                                    <div class="entry-box-text">
-                                        {{ @$rec->short_description }}
-
-                                    </div>
-                                    <div class="entry-box-profile">
-                                        <div class="entry-box-image">
-                                            <img src="{{ url('image/' . @$rec->data['image'] . '/60x60' ) }}" alt="{{ $rec->name }}">
-                                        </div>
-                                        <div class="entry-box-info">
-                                            <h4 class="entry-box-name">{{ $rec->name }}</h4>
-                                            <p class="entry-box-company">{{ @$rec->data['specialization'] }}</p>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="entry-box-profile">
+                                <div class="entry-box-image">
+                                    <img src="{{ url('image/' . @$rec->data['image'] . '/60x60' ) }}" alt="{{ $rec->name }}">
+                                </div>
+                                <div class="entry-box-info">
+                                    <h4 class="entry-box-name">{{ $rec->name }}</h4>
+                                    <p class="entry-box-company">{{ @$rec->data['specialization'] }}</p>
                                 </div>
                             </div>
-
-                        @endforeach
-                    @endif
-
+                        </div>
+                    @endforeach
                 </div>
+                @endif
             </div>
         </div>
     </section>
@@ -223,6 +215,7 @@
         </div>
     </div>
 </div>
+<div class="scrollTop"><i class="far fa-chevron-up"></i></div>
 <!-- Modal -->
 <div class="modal fade ModalVideo" id="ModalVideo" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

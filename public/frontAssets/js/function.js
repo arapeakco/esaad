@@ -107,6 +107,76 @@ $('.form-contact').validate({
   });
 
 
+  var sliderFamous = $('.slider-famous');
+    sliderFamous.owlCarousel({
+    margin: 30,
+    smartSpeed: 650,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    slideTransition: 'linear',
+    nav: false,
+    dots: true,
+    rtl: true,
+    mouseDrag: true,
+    responsive: {
+        0: {
+        items: 2,
+        margin:10
+        },
+        600: {
+        items: 2,
+
+        },
+        1000: {
+        items: 3,
+        }
+    }
+});
+
+
+
+var slideRecom = $('.slider-recom');
+slideRecom.owlCarousel({
+  margin: 30,
+  smartSpeed:650,
+  loop: false,
+  autoplay: false,
+  autoplayTimeout: 5000,
+  slideTransition: 'linear',
+  nav: false,
+  dots: true,
+  rtl: true,
+  mouseDrag: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 2,
+
+    },
+    1000: {
+      items: 3,
+    }
+  }
+});
+
+
+
+$(".scrollTop").on("click", function() {
+    $("html,body").animate({ scrollTop: 0 }, 1000);
+  });
+  $(window).on( 'scroll', function () {
+      if ($(this).scrollTop() > 600) {
+          $('.scrollTop').fadeIn();
+      } else {
+          $('.scrollTop').fadeOut();
+      }
+  });
+
+
+
 }(jQuery));
 
 
