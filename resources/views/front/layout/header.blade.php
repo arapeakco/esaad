@@ -17,7 +17,7 @@
                 <div class="btn-close-header-mobile justify-content-end"><i class="fas fa-times"></i></div>
             </div>
             <div class="menu-container mr-lg-auto">
-                <ul class="main-menu list-main-menu">
+                <ul class="main-menu list-main-menu d-lg-flex align-items-center">
                     @if(getMenuItems())
                         @foreach(getMenuItems() as $index => $item)
                             <li class="menu_item"><a class="menu_link {{ $index == 0 ? 'active' : '' }}" data-scroll="{{ 'section' .($index+1) }}"><span class="menu_link-text">{{ $item->name }}</span></a></li>
