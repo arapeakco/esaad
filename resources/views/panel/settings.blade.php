@@ -83,16 +83,15 @@
 
                                 <div class="form-group">
                                     <label>حقوق الموقع</label>
-                                    <textarea name="copy_rights"
+                                    <input name="copy_rights" value="{{ getSetting('copy_rights') }} "
                                               class="form-control"
                                               aria-describedby="emailHelp"
-                                              placeholder="وصف فوتر الموقع">{{ getSetting('copy_rights') }}</textarea>
+                                              placeholder="حقوق الموقع">
                                 </div>
                                 <div class="form-group">
                                     <label>الكلمات المفتاحية للموقع</label>
                                     <input id="kt_tagify_1" name='site_tags' placeholder='الكلمات المفتاحية للموقع ...'
                                            value='{{ getSetting('site_tags') }}'>
-
                                 </div>
 
                             </div>
