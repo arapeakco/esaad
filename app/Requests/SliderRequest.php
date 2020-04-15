@@ -29,7 +29,6 @@ class SliderRequest extends FormRequest
 
         return [
             'name' => 'required|string',
-            'percentage' => 'required|numeric|between:0,100',
             'image' => 'nullable|image',
         ];
     }

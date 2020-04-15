@@ -33,12 +33,6 @@
                         <input class="form-control m-input" type="text" name="name"
                                placeholder="الإسم" required value="{{ isset($item) ? $item->name : ''  }}">
                     </div>
-                    <div class="form-group">
-                        <label>نسبة انجاز الحملة</label>
-                        <input class="form-control m-input" type="number" name="percentage"
-                               placeholder="نسبة انجاز الحملة" min="0" max="100" required value="{{ isset($item) ? $item->data['percentage'] : ''  }}">
-
-                    </div>
 
                 </div>
             </div>

@@ -25,7 +25,6 @@ class SliderController extends Controller
         $data = $request->all();
         $data['post_type_id'] = 6;
         $arr = [];
-        $arr['percentage'] = @$data['percentage'];
 
         if ($file = $request->file('image')) {
             $arr['image'] = $file->store('images');
