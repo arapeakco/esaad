@@ -1729,9 +1729,8 @@ label.error {
     .entry-box-2 {
         max-width: 335px;
     }
-    .whatsapp-link {
-        color: #42c452 !important;
-        font-size: 22px;
+    .widget__item-2 {
+        flex-wrap: wrap;
     }
 }
 
