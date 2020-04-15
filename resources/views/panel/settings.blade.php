@@ -30,11 +30,7 @@
                                     الإعدادات الأساسية
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_2">
-                                    إعدادات التواصل
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_3">
                                     إعدادات وسائل التواصل الإجتماعي
@@ -95,28 +91,6 @@
                                 </div>
 
                             </div>
-                            <div class="tab-pane" id="kt_tabs_5_2" role="tabpanel">
-
-                                <div class="form-group">
-                                    <label>البريد الالكتروني</label>
-                                    <input type="email" name="email"
-                                           value="{{ getSetting('email') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="البريد الالكتروني">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>رقم الهاتف</label>
-                                    <input type="text" name="phone"
-                                           value="{{ getSetting('phone') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="رقم الهاتف">
-                                </div>
-                                <div class="form-group">
-                                    <label>الفاكس</label>
-                                    <input type="text" name="fax"
-                                           value="{{ getSetting('fax') }}" class="form-control"
-                                           aria-describedby="emailHelp" placeholder="الفاكس">
-                                </div>
-                            </div>
 
                             <div class="tab-pane" id="kt_tabs_5_3" role="tabpanel">
 
@@ -132,18 +106,14 @@
                                            value="{{ getSetting('twitter') }}" class="form-control"
                                            aria-describedby="emailHelp" placeholder="تويتر">
                                 </div>
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <label>لينكد ان</label>--}}
-                                {{--                                    <input type="text" name="linkedIn"--}}
-                                {{--                                           value="{{ getSetting('linkedIn') }}" class="form-control"--}}
-                                {{--                                           aria-describedby="emailHelp" placeholder="لينكد ان">--}}
-                                {{--                                </div>--}}
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <label>واتساب</label>--}}
-                                {{--                                    <input type="text" name="whatsapp"--}}
-                                {{--                                           value="{{ getSetting('whatsapp') }}" class="form-control"--}}
-                                {{--                                           aria-describedby="emailHelp" placeholder="واتساب">--}}
-                                {{--                                </div>--}}
+
+
+                                <div class="form-group">
+                                    <label>واتساب</label>
+                                    <input type="text" name="whatsapp"
+                                           value="{{ getSetting('whatsapp') }}" class="form-control"
+                                           aria-describedby="emailHelp" placeholder="واتساب">
+                                </div>
                                 <div class="form-group">
                                     <label>إنستقرام</label>
                                     <input type="text" name="instagram"
@@ -151,18 +121,31 @@
                                            class="form-control"
                                            aria-describedby="emailHelp" placeholder="إنستقرام">
                                 </div>
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <label>يوتيوب</label>--}}
-                                {{--                                    <input type="text" name="youtube"--}}
-                                {{--                                           value="{{ getSetting('youtube') }}" class="form-control"--}}
-                                {{--                                           aria-describedby="emailHelp" placeholder="يوتيوب">--}}
-                                {{--                                </div>--}}
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <label>فيمو</label>--}}
-                                {{--                                    <input type="text" name="viemo"--}}
-                                {{--                                           value="{{ getSetting('viemo') }}" class="form-control"--}}
-                                {{--                                           aria-describedby="emailHelp" placeholder="فيمو">--}}
-                                {{--                                </div>--}}
+                                <div class="form-group">
+                                    <label>يوتيوب</label>
+                                    <input type="text" name="youtube"
+                                           value="{{ getSetting('youtube') }}" class="form-control"
+                                           aria-describedby="emailHelp" placeholder="يوتيوب">
+                                </div>
+                                <div class="form-group">
+                                    <label>سناب شات</label>
+                                    <input type="text" name="snapChat"
+                                           value="{{ getSetting('snapChat') }}" class="form-control"
+                                           aria-describedby="emailHelp" placeholder="سناب شات">
+                                </div>
+                                <div class="form-group">
+                                    <label>ايميل</label>
+                                    <input type="email" name="email"
+                                           value="{{ getSetting('email') }}" class="form-control"
+                                           aria-describedby="emailHelp" placeholder="ايميل">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>اتصال </label>
+                                    <input type="text" name="phone"
+                                           value="{{ getSetting('phone') }}" class="form-control"
+                                           aria-describedby="emailHelp" placeholder="اتصال ">
+                                </div>
 
                             </div>
 

@@ -16,7 +16,7 @@ class FamousRequest extends FormRequest
      */
     public function authorize()
     {
-        return  true;
+        return auth('admin')->user()->can('manage_famous');
     }
 
     /**
@@ -31,7 +31,6 @@ class FamousRequest extends FormRequest
             'name' => 'required|string',
             'url'   => 'required|url',
             'image' => 'required_unless:_method,PUT|image',
-
         ];
     }
 

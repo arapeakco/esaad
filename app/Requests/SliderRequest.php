@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class FaqRequest extends FormRequest
+class SliderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,7 +16,7 @@ class FaqRequest extends FormRequest
      */
     public function authorize()
     {
-        return auth('admin')->user()->can('manage_faqs');
+        return auth('admin')->user()->can('manage_slider');
     }
 
     /**
@@ -26,12 +26,12 @@ class FaqRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [];
-        foreach (locales() as $key => $language) {
-            $rules['question_' . $key] = 'required|string';
-            $rules['answer_' . $key] = 'required|string';
-        }
-        return $rules;
+
+        return [
+            'name' => 'required|string',
+            'percentage' => 'required|numeric|between:0,100',
+            'image' => 'nullable|image',
+        ];
     }
 
     protected function failedValidation(Validator $validator)

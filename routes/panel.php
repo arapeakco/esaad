@@ -27,6 +27,11 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
         Route::get('index', 'HomeController@index')->name('index');
 
 
+        Route::group(['before' => 'profile' , 'as' =>'profile.'], function () {
+            Route::get('/' , ['as' => 'show'  , 'uses' => 'AdminController@showProfile']);
+            Route::post('/' , ['as' => 'update'  , 'uses' => 'AdminController@updateProfile']);
+        });
+
         Route::group(['prefix' => 'admins', 'as' => 'admins.' ], function () {
 
             Route::get('/', ['as' => 'index', 'middleware' => 'permission:show_admins' , 'uses' => 'AdminController@index']);
@@ -101,46 +106,46 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
             Route::get('/', ['as' => 'index', 'uses' => 'ItemController@index']);
             Route::get('/datatable', ['as' => 'datatable', 'uses' => 'ItemController@datatable']);
 
-            Route::group(['prefix' => 'create'], function () {
-                Route::get('/', ['as' => 'create', 'uses' => 'ItemController@create']);
-                Route::post('/', ['as' => 'store', 'uses' => 'ItemController@store']);
-            });
+//            Route::group(['prefix' => 'create'], function () {
+//                Route::get('/', ['as' => 'create', 'uses' => 'ItemController@create']);
+//                Route::post('/', ['as' => 'store', 'uses' => 'ItemController@store']);
+//            });
             Route::group(['prefix' => '{id}'], function () {
                 Route::get('/edit', ['as' => 'edit', 'uses' => 'ItemController@edit']);
                 Route::put('/edit', ['as' => 'update', 'uses' => 'ItemController@update']);
-                Route::delete('/', ['as' => 'destry', 'uses' => 'ItemController@destroy']);
+//                Route::delete('/', ['as' => 'destry', 'uses' => 'ItemController@destroy']);
             });
         });
 
 
-        Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
+        Route::group(['prefix' => 'about', 'as' => 'about.' , 'middleware' => ['permission:manage_about']], function () {
             Route::get('/', ['as' => 'index', 'uses' => 'AboutController@index']);
             Route::post('/', ['as' => 'store', 'uses' => 'AboutController@store']);
         });
 
-        Route::group(['prefix' => 'slider', 'as' => 'slider.'], function () {
-            Route::get('/', ['as' => 'index', 'uses' => 'SettingsController@slider']);
-            Route::post('/', ['as' => 'store', 'uses' => 'SettingsController@storeSlider']);
+        Route::group(['prefix' => 'slider', 'as' => 'slider.', 'middleware' => ['permission:manage_slider']], function () {
+            Route::get('/', ['as' => 'index', 'uses' => 'SliderController@index']);
+            Route::post('/', ['as' => 'store', 'uses' => 'SliderController@store']);
         });
 
-        Route::group(['prefix' => 'post-type', 'as' => 'post-type.'], function () {
+        Route::group(['prefix' => 'post-type', 'as' => 'post-type.', 'middleware' => ['permission:manage_post_type'] ], function () {
 
             Route::get('/', ['as' => 'index', 'uses' => 'PostTypeController@index']);
             Route::get('/datatable', ['as' => 'datatable', 'uses' => 'PostTypeController@datatable']);
 
-            Route::group(['prefix' => 'create'], function () {
-                Route::get('/', ['as' => 'create', 'uses' => 'PostTypeController@create']);
-                Route::post('/', ['as' => 'store', 'uses' => 'PostTypeController@store']);
-            });
+//            Route::group(['prefix' => 'create'], function () {
+//                Route::get('/', ['as' => 'create', 'uses' => 'PostTypeController@create']);
+//                Route::post('/', ['as' => 'store', 'uses' => 'PostTypeController@store']);
+//            });
             Route::group(['prefix' => '{id}'], function () {
                 Route::get('/edit', ['as' => 'edit', 'uses' => 'PostTypeController@edit']);
                 Route::put('/edit', ['as' => 'update', 'uses' => 'PostTypeController@update']);
-                Route::delete('/', ['as' => 'destry', 'uses' => 'PostTypeController@destroy']);
+//                Route::delete('/', ['as' => 'destry', 'uses' => 'PostTypeController@destroy']);
             });
         });
 
 
-        Route::group(['prefix' => 'memberships', 'as' => 'memberships.'], function () {
+        Route::group(['prefix' => 'memberships', 'as' => 'memberships.', 'middleware' => ['permission:manage_members']], function () {
 
             Route::get('/', ['as' => 'index', 'uses' => 'MembershipController@index']);
             Route::get('/datatable', ['as' => 'datatable', 'uses' => 'MembershipController@datatable']);
@@ -157,7 +162,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
         });
 
 
-        Route::group(['prefix' => 'expenses', 'as' => 'expenses.'], function () {
+        Route::group(['prefix' => 'expenses', 'as' => 'expenses.', 'middleware' => ['permission:manage_expenses']], function () {
 
             Route::get('/', ['as' => 'index', 'uses' => 'ExpensesController@index']);
             Route::get('/datatable', ['as' => 'datatable', 'uses' => 'ExpensesController@datatable']);
@@ -173,7 +178,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
             });
         });
 
-        Route::group(['prefix' => 'famous', 'as' => 'famous.'], function () {
+        Route::group(['prefix' => 'famous', 'as' => 'famous.', 'middleware' => ['permission:manage_famous']], function () {
 
             Route::get('/', ['as' => 'index', 'uses' => 'FamousController@index']);
             Route::get('/datatable', ['as' => 'datatable', 'uses' => 'FamousController@datatable']);
@@ -189,7 +194,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
             });
         });
 
-        Route::group(['prefix' => 'recommendations', 'as' => 'recommendations.'], function () {
+        Route::group(['prefix' => 'recommendations', 'as' => 'recommendations.', 'middleware' => ['permission:manage_rec']], function () {
 
             Route::get('/', ['as' => 'index', 'uses' => 'RecommendationController@index']);
             Route::get('/datatable', ['as' => 'datatable', 'uses' => 'RecommendationController@datatable']);
@@ -205,23 +210,12 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
             });
         });
 
-//
-//        Route::group(['prefix' => 'transactions', 'as' => 'transactions.' ], function () {
-//
-//            Route::get('/', ['as' => 'index', 'uses' => 'RoleController@index']);
-//            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'RoleController@datatable']);
-//
-//            Route::group(['prefix' => 'create'], function () {
-//                Route::get('/', ['as' => 'create', 'uses' => 'RoleController@create']);
-//                Route::post('/', ['as' => 'store', 'uses' => 'RoleController@store']);
-//            });
-//
-//            Route::group(['prefix' => '{id}'], function () {
-//                Route::get('/edit', ['as' => 'edit', 'uses' => 'RoleController@edit']);
-//                Route::put('/edit', ['as' => 'update', 'uses' => 'RoleController@update']);
-//                Route::delete('/', ['as' => 'destry', 'uses' => 'RoleController@destroy']);
-//            });
-//        });
+        Route::group(['prefix' => 'transactions', 'as' => 'transactions.', 'middleware' => ['permission:manage_transactions']], function () {
+
+            Route::get('/', ['as' => 'index', 'uses' => 'TransactionController@index']);
+            Route::get('/datatable', ['as' => 'datatable', 'uses' => 'TransactionController@datatable']);
+
+        });
 
         Route::group(['prefix' => 'contacts', 'as' => 'contacts.'], function () {
             Route::get('/' , ['as' => 'index' , 'uses' => 'ContactController@index']);

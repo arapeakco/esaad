@@ -16,7 +16,7 @@ class RecommendationRequest extends FormRequest
      */
     public function authorize()
     {
-        return  true;
+        return auth('admin')->user()->can('manage_rec');
     }
 
     /**

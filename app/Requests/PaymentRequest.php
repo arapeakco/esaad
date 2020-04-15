@@ -34,10 +34,17 @@ class PaymentRequest extends FormRequest
             'source.name' => 'required|string',
             'source.month' => 'required|numeric|between:1,12',
             'source.year' => 'required|numeric',
-            'source.cvv' => 'required|digits:3',
+            'source.cvc' => 'required|digits:3',
             'name' => 'required|string',
             'phone' => 'required|numeric',
         ];
     }
 
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'status' => StatusCodes::VALIDATION_ERROR,
+            'message' => $validator->errors()->first()
+        ], StatusCodes::VALIDATION_ERROR));
+    }
 }

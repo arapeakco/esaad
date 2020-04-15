@@ -118,82 +118,110 @@
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
 
+                 @can('manage_post_type')
+
+                    <li class="kt-menu__item " aria-haspopup="true">
+                        <a href="{{ route('panel.post-type.index') }}" class="kt-menu__link ">
+                            <i class="kt-menu__link-icon fa fa-lock">
+                                <span></span>
+                            </i>
+                            <span class="kt-menu__link-text">الأنواع</span>
+                        </a>
+                    </li>
+
+                @endcan
+
+
+                @canany(['manage_about' ,'manage_slider', 'manage_members' , 'manage_expenses' , 'manage_famous' , 'manage_rec'])
+                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                        data-ktmenu-submenu-toggle="hover">
+                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                            <span class="kt-menu__link-icon"><i class="fa fa-list"></i></span>
+                            <span class="kt-menu__link-text">التحكم بالموقع</span>
+                            <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                        </a>
+
+                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                            <ul class="kt-menu__subnav">
+                                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
+                                        class="kt-menu__link"><span
+                                            class="kt-menu__link-text">التحكم بالموقع</span></span></li>
+
+
+
+
+                                @can('manage_slider')
+                                    <li class="kt-menu__item " aria-haspopup="true"><a
+                                            href="{{ route('panel.slider.index') }}"
+                                            class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">سلايدر الموقع</span></a>
+                                    </li>
+                                @endcanany
+
+                                @can('manage_about')
+                                    <li class="kt-menu__item " aria-haspopup="true"><a
+                                            href="{{ route('panel.about.index') }}" class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">عن الحملة</span></a></li>
+
+                                @endcanany
+                                @can('manage_members')
+                                    <li class="kt-menu__item " aria-haspopup="true"><a
+                                            href="{{ route('panel.memberships.index') }}" class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">العضويات</span></a></li>
+
+                                @endcanany
+
+                                @can('manage_expenses')
+                                    <li class="kt-menu__item " aria-haspopup="true"><a
+                                            href="{{ route('panel.expenses.index') }}" class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">مصارف الحملة</span></a></li>
+
+                                @endcanany
+
+                                @can('manage_famous')
+                                    <li class="kt-menu__item " aria-haspopup="true"><a
+                                            href="{{ route('panel.famous.index') }}" class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">مشاهير الحملة</span></a></li>
+
+                                @endcanany
+
+                                @can('manage_rec')
+                                    <li class="kt-menu__item " aria-haspopup="true"><a
+                                            href="{{ route('panel.recommendations.index') }}" class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
+                                                class="kt-menu__link-text">التزكيات</span></a></li>
+
+                                @endcanany
+
+
+                            </ul>
+                        </div>
+                    </li>
+
+                @endcanany
+
+
+                @can('manage_transactions')
+
                 <li class="kt-menu__item " aria-haspopup="true">
-                    <a href="{{ route('panel.post-type.index') }}" class="kt-menu__link ">
-                        <i class="kt-menu__link-icon fa fa-lock">
+                    <a href="{{ route('panel.transactions.index') }}" class="kt-menu__link ">
+                        <i class="kt-menu__link-icon fa fa-money-bill">
                             <span></span>
                         </i>
-                        <span class="kt-menu__link-text">الأنواع</span>
+                        <span class="kt-menu__link-text">الحركات المالية</span>
                     </a>
                 </li>
 
-
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                    data-ktmenu-submenu-toggle="hover">
-                    <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-                        <span class="kt-menu__link-icon"><i class="fa fa-list"></i></span>
-                        <span class="kt-menu__link-text">التحكم بالموقع</span>
-                        <i class="kt-menu__ver-arrow la la-angle-right"></i>
-                    </a>
-
-                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                        <ul class="kt-menu__subnav">
-                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
-                                    class="kt-menu__link"><span
-                                        class="kt-menu__link-text">التحكم بالموقع</span></span></li>
-
-{{--                            <li class="kt-menu__item " aria-haspopup="true"><a--}}
-{{--                                    href="{{ route('panel.slider.index') }}" class="kt-menu__link "><i--}}
-{{--                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span--}}
-{{--                                        class="kt-menu__link-text">سلايدر الموقع</span></a></li>--}}
-
-
-                            <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.about.index') }}" class="kt-menu__link "><i
-                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">عن الحملة</span></a></li>
-
-                            <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.memberships.index') }}" class="kt-menu__link "><i
-                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">العضويات</span></a></li>
-
-
-                            <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.expenses.index') }}" class="kt-menu__link "><i
-                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">مصارف الحملة</span></a></li>
-
-
-                            <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.famous.index') }}" class="kt-menu__link "><i
-                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">مشاهير الحملة</span></a></li>
-
-
-                            <li class="kt-menu__item " aria-haspopup="true"><a
-                                    href="{{ route('panel.recommendations.index') }}" class="kt-menu__link "><i
-                                        class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                        class="kt-menu__link-text">التزكيات</span></a></li>
+                @endcan
 
 
 
-                        </ul>
-                    </div>
-                </li>
-
-{{--                <li class="kt-menu__item " aria-haspopup="true">--}}
-{{--                    <a href="{{ route('panel.transactions.index') }}" class="kt-menu__link ">--}}
-{{--                        <i class="kt-menu__link-icon fa fa-lock">--}}
-{{--                            <span></span>--}}
-{{--                        </i>--}}
-{{--                        <span class="kt-menu__link-text">الحركات المالية</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-
-
-
-                @can('manage_faqs')
+            @can('manage_faqs')
                     <li class="kt-menu__section ">
                         <h4 class="kt-menu__section-text">الأسئلة الشائعة</h4>
                         <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -256,35 +284,17 @@
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
 
-                @can('manage_faqs')
+                @can('manage_items')
 
-                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover">
-                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-                            <span class="kt-menu__link-icon"><i class="fa fa-list"></i></span>
+                    <li class="kt-menu__item " aria-haspopup="true">
+                        <a href="{{ route('panel.items.index') }}" class="kt-menu__link ">
+                            <i class="kt-menu__link-icon fa fa-list">
+                                <span></span>
+                            </i>
                             <span class="kt-menu__link-text">قوائم الموقع</span>
-                            <i class="kt-menu__ver-arrow la la-angle-right"></i>
                         </a>
-
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-                                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
-                                        class="kt-menu__link"><span
-                                            class="kt-menu__link-text">الأسئلة الشائعة</span></span></li>
-                                <li class="kt-menu__item " aria-haspopup="true"><a
-                                        href="{{ route('panel.items.create') }}" class="kt-menu__link "><i
-                                            class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                            class="kt-menu__link-text">إضافة</span></a></li>
-
-                                <li class="kt-menu__item " aria-haspopup="true"><a
-                                        href="{{ route('panel.items.index') }}" class="kt-menu__link "><i
-                                            class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
-                                            class="kt-menu__link-text">الكل</span></a></li>
-
-
-                            </ul>
-                        </div>
                     </li>
+
                 @endcan
 
 

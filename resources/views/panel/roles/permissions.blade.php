@@ -69,6 +69,30 @@
         </div>
     </fieldset>
 </div>
+
+<div class="form-group">
+    <h5>الانواع</h5>
+    <fieldset>
+        <legend>
+            <label class="kt-checkbox">
+                <input type="checkbox" class="checkAll" @if(isset($item) && $item->hasAllDirectPermissions(['manage_post_type'])) checked @endif>
+                <span class="first"></span>
+            </label>
+        </legend>
+        <div class="row">
+
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_post_type" type="checkbox" @if(isset($item) && $item->hasPermissionTo('manage_post_type')) checked @endif> ادارة الانواع
+                    <span></span>
+                </label>
+            </div>
+
+        </div>
+    </fieldset>
+</div>
+
+
 <div class="form-group">
     <h5>القوائم</h5>
     <fieldset>
@@ -92,25 +116,88 @@
 </div>
 
 
-{{--<div class="form-group">--}}
-{{--    <h5> صفحات الموقع </h5>--}}
-{{--    <fieldset>--}}
-{{--        <legend>--}}
-{{--            <label class="kt-checkbox">--}}
-{{--                <input type="checkbox" class="checkAll" @if(isset($item) && $item->hasAllDirectPermissions(['manage_pages'])) checked @endif>--}}
-{{--                <span class="first"></span>--}}
-{{--            </label>--}}
-{{--        </legend>--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-md-6 mb-4">--}}
-{{--                <label class="kt-checkbox">--}}
-{{--                    <input name="permissions[]" value="manage_pages" type="checkbox"--}}
-{{--                           @if(isset($item) && $item->hasPermissionTo('manage_pages')) checked @endif>  ادارة الصفحات--}}
-{{--                    <span></span>--}}
-{{--                </label>--}}
-{{--            </div>--}}
+<div class="form-group">
+    <h5>الحركات المالية</h5>
+    <fieldset>
+        <legend>
+            <label class="kt-checkbox">
+                <input type="checkbox" class="checkAll" @if(isset($item) && $item->hasAllDirectPermissions(['manage_transactions'])) checked @endif>
+                <span class="first"></span>
+            </label>
+        </legend>
+        <div class="row">
 
-{{--        </div>--}}
-{{--    </fieldset>--}}
-{{--</div>--}}
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_transactions" type="checkbox" @if(isset($item) && $item->hasPermissionTo('manage_transactions')) checked @endif> ادارة الحركات المالية
+                    <span></span>
+                </label>
+            </div>
+
+        </div>
+    </fieldset>
+</div>
+
+
+<div class="form-group">
+    <h5> التحكم بالموقع </h5>
+    <fieldset>
+        <legend>
+            <label class="kt-checkbox">
+                <input type="checkbox" class="checkAll" @if(isset($item) && $item->hasAllDirectPermissions(['manage_about' , 'manage_members' , 'manage_expenses' , 'manage_famous' , 'manage_rec'])) checked @endif>
+                <span class="first"></span>
+            </label>
+        </legend>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_about" type="checkbox"
+                           @if(isset($item) && $item->hasPermissionTo('manage_about')) checked @endif>  ادارة عن الحملة
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_slider" type="checkbox"
+                           @if(isset($item) && $item->hasPermissionTo('manage_slider')) checked @endif>  ادارة السلايدر
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_members" type="checkbox"
+                           @if(isset($item) && $item->hasPermissionTo('manage_members')) checked @endif>  ادارة العضويات
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_expenses" type="checkbox"
+                           @if(isset($item) && $item->hasPermissionTo('manage_expenses')) checked @endif>  ادارة المصارف
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_famous" type="checkbox"
+                           @if(isset($item) && $item->hasPermissionTo('manage_famous')) checked @endif>  ادارة المشاهير
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <label class="kt-checkbox">
+                    <input name="permissions[]" value="manage_rec" type="checkbox"
+                           @if(isset($item) && $item->hasPermissionTo('manage_rec')) checked @endif>  ادارة التوصيات
+                    <span></span>
+                </label>
+            </div>
+
+        </div>
+    </fieldset>
+</div>
 

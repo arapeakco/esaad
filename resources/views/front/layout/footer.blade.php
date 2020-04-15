@@ -38,7 +38,6 @@
                 <form action="" class="form-contact" id="contact">
                     <div class="form-group mb-4 pb-2">
                         <input type="text" class="form-control" name="phone" placeholder="رقم جوالك">
-                        <span id="response_msg" class="d-none"></span>
                     </div>
                     <div class="form-group mt-4">
                         <button type="submit" class="general_btn_lg ">اطلب تواصل</button>

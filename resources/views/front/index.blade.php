@@ -2,6 +2,26 @@
 <html>
 <head>
     @include('front.layout.head')
+
+    <style>
+        .hero {
+            position: relative;
+            text-align: center;
+            background: url('{{ url('image/' . @$slider->posts()->first()->data['image']) }}') center no-repeat;
+            background-size: cover;
+            -js-display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+    </style>
 </head>
 <body>
 <!-- begin:: Page -->
@@ -23,7 +43,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mx-auto">
                     <div class="hero-action wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"><a
-                            class="btn hero-action-btn" data-toggle="modal" data-target="#ModalPayment">ادعم الآن</a>
+                            class="btn hero-action-btn" data-toggle="modal" data-target="#ModalPayment">{{ @$slider->posts()->first()->name }}</a>
                     </div>
                 </div>
             </div>
@@ -235,7 +255,7 @@
     </div>
 </div>
 
-<a class="link-whatsapp " href=""><img src="{{ asset('frontAssets/images/whatsapp.png') }}" alt=""></a>
+<a class="link-whatsapp " href="https://api.whatsapp.com/send?phone={{ getSetting('whatsapp') }}&text=السلام عليكم"><img src="{{ asset('frontAssets/images/whatsapp.png') }}" alt=""></a>
 
 <div class="scrollTop"><i class="far fa-chevron-up"></i></div>
 @include('front.layout.modals')

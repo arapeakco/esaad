@@ -1,4 +1,4 @@
-@extends('panel.layout.master' , ['title' => 'الأنواع'])
+@extends('panel.layout.master' , ['title' => 'الحركات المالية'])
 
 @push('css')
     <link href="{{asset('panelAssets/css/bootstrap-select.css')}}" rel="stylesheet" type="text/css"/>
@@ -9,7 +9,7 @@
     <div class="kt-subheader  kt-grid__item" id="kt_subheader">
         <div class="kt-container  kt-container--fluid ">
             <div class="kt-subheader__main">
-                <h3 class="kt-subheader__title">الأنواع</h3>
+                <h3 class="kt-subheader__title">الحركات المالية</h3>
             </div>
         </div>
     </div>
@@ -21,22 +21,13 @@
         <div class="kt-portlet__head kt-portlet__head--lg">
             <div class="kt-portlet__head-label">
 										<span class="kt-portlet__head-icon">
-											<i class="kt-font-brand fa fa-lock"></i>
+											<i class="kt-font-brand fa fa-money-bill"></i>
 										</span>
                 <h3 class="kt-portlet__head-title">
-                    الأنواع
+                    الحركات المالية
                 </h3>
             </div>
-{{--            <div class="kt-portlet__head-toolbar">--}}
-{{--                <div class="kt-portlet__head-wrapper">--}}
-{{--                    <div class="kt-portlet__head-actions">--}}
-{{--                        <a href="{{ route('panel.post-type.create') }}" class="btn btn-brand btn-elevate btn-icon-sm">--}}
-{{--                            <i class="la la-plus"></i>--}}
-{{--                            إضافة--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+
         </div>
         <div class="kt-portlet__body">
 
@@ -84,38 +75,53 @@
 
     <script>
 
-        window.data_url = '{{ route('panel.post-type.datatable') }}';
+        window.data_url = '{{ route('panel.transactions.datatable') }}';
 
         window.columns = [
+            {
+                field: ' ',
+                title: "الرقم التسلسلي",
+                width: 100,
+                textAlign: "center",
+                template: function (data , index, datatable) {
+                    return ( (datatable.getCurrentPage() - 1) * datatable.getPageSize() ) +  index + 1;
+                },
+            },
             {
                 field: 'name',
                 title: "الإسم",
                 textAlign: "center",
+
             },
             {
-                field: 'Actions',
-                title: "العمليات",
-                sortable: false,
-                overflow: 'visible',
+                field: 'phone',
+                title: "رقم الجوال",
                 textAlign: "center",
-                autoHide: false,
-                width: 100,
-                template: function (data) {
-                    var editUrl = "{{ url('panel/post-type/') }}/" + data.id + "/edit";
-                    var deleteUrl = "{{ url('panel/post-type/') }}/" + data.id;
-                    return `
-                        <input value=` + data.id + ` type="hidden" class="id">
-						<div class="dropdown">
-							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md" data-toggle="dropdown">
-                                <i class="la la-cog"></i>
-                            </a>
-						  	<div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="` + editUrl + `"><i class="la la-edit"></i> تعديل</a>
-<!--                                    <a class="dropdown-item delete" href="#" data-url="` + deleteUrl + `"><i class="la la-times"></i> حذف </a>-->
-						  	</div>
-						</div>`;
-                },
-            }
+
+            },
+            {
+                field: 'member_id',
+                title: "الداعية",
+                textAlign: "center",
+                template : function (data) {
+                    return data.member.name;
+                }
+
+            },
+            {
+                field: 'status',
+                title: "الحالة",
+                textAlign: "center",
+
+            },
+            {
+                field: 'amount',
+                title: "المبلغ",
+                textAlign: "center",
+                template : function (data) {
+                    return data.amount + " " + data.currency;
+                }
+            },
         ];
 
 

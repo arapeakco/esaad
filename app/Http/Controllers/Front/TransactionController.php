@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Constants\StatusCodes;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PaymentRequest;
 use App\Post;
@@ -14,36 +15,44 @@ class TransactionController extends Controller
     {
 
         $data = $request->all();
-        $membership = Post::find($data['membership_id']);
 
-        $description = ' دعم ' . $membership->name;
+        $description = ' دعم العضويات في موقع اسعاد ';
         $source = [
             'type' => 'creditcard',
             'name' => $data['source']['name'],
             'number' => $data['source']['number'],
             'month' => $data['source']['month'],
             'year' => $data['source']['year'],
-            'cvc' => $data['source']['cvv'],
+            'cvc' => $data['source']['cvc'],
         ];
 
-        $result = $this->get_payment_link(100, $description, $source);
+        $result = $this->get_payment_link($data['amount'], $description, $source);
 
-        if (@$result->id){
-            $transaction['name'] = $data['name'];
-            $transaction['phone'] = $data['phone'];
-            $transaction['membership_id'] = $data['membership_id'];
-            $transaction['payment_id'] = $result->id;
-            $transaction['status'] = $result->status;
-            $transaction['currency'] = $result->currency;
-            $transaction['amount'] = $result->amount;
-            $transaction['credit'] = $result->source->company;
-            $transaction['number'] = $result->source->number;
+        if (@$result->id) {
 
-            Transaction::create($transaction);
+            $membership_ids = explode(',', $data['membership_id']);
 
-            return redirect()->to($result->source->transaction_url);
-        }else{
-            return back()->with('error' , __('front.error'));
+            foreach ($membership_ids as $id) {
+                $member = Post::find($id);
+                if (isset($member)) {
+                    $transaction['name'] = $data['name'];
+                    $transaction['phone'] = $data['phone'];
+                    $transaction['membership_id'] = $id;
+                    $transaction['payment_id'] = $result->id;
+                    $transaction['status'] = $result->status;
+                    $transaction['currency'] = $result->currency;
+                    $transaction['amount'] = ($member->data['price']??0);
+                    $transaction['credit'] = $result->source->company;
+                    $transaction['number'] = $result->source->number;
+
+                    Transaction::create($transaction);
+                }
+            }
+
+
+            return $this->response_api(true , $result->source->transaction_url , StatusCodes::OK);
+        } else {
+            return $this->response_api(false ,  __('front.error') , StatusCodes::INTERNAL_ERROR);
         }
 
 
@@ -105,11 +114,13 @@ class TransactionController extends Controller
 
     public function status(Request $request)
     {
-        if (@$request->id){
-            $item = Transaction::where('payment_id' , $request->id)->first();
-            $item->update(['status' => $request->status ]);
 
-            return redirect('/')->with('success' , __('front.success'));
+        if (@$request->id && $request->failed == "paid") {
+            $item = Transaction::where('payment_id', $request->id)->update(['status' => $request->status]);;
+            return redirect('/')->with('success', __('front.success'));
+        }else{
+            $item = Transaction::where('payment_id', $request->id)->update(['status' => $request->status]);;
+            return redirect('/')->with('error', __($request->message));
         }
     }
 }

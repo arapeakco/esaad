@@ -11,4 +11,16 @@ class Transaction extends Model
         'currency', 'credit', 'number'
     ];
 
+    public function member()
+    {
+        return $this->belongsTo(Post::class , 'membership_id' , 'id')->withDefault();
+    }
+
+    public function scopeFilter($q, $search)
+    {
+        return $q->where('name', 'like', '%' . $search . '%')
+            ->orWhere('phone', 'like', '%' . $search . '%')
+            ->orWhere('payment_id', 'like', '%' . $search . '%');
+    }
+
 }

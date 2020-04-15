@@ -19,6 +19,7 @@ class HomeController extends Controller
         $data['expenses'] = PostType::find(3);
         $data['famous'] = PostType::find(4);
         $data['recommendations'] = PostType::find(5);
+        $data['slider'] = PostType::find(6);
 
         $data['faqs'] = Faq::query()->paginate(5);
         return view('front.index' , $data);

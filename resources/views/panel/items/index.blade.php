@@ -27,16 +27,16 @@
                     قوائم الموقع
                 </h3>
             </div>
-            <div class="kt-portlet__head-toolbar">
-                <div class="kt-portlet__head-wrapper">
-                    <div class="kt-portlet__head-actions">
-                        <a href="{{ route('panel.items.create') }}" class="btn btn-brand btn-elevate btn-icon-sm">
-                            <i class="la la-plus"></i>
-                            إضافة
-                        </a>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="kt-portlet__head-toolbar">--}}
+{{--                <div class="kt-portlet__head-wrapper">--}}
+{{--                    <div class="kt-portlet__head-actions">--}}
+{{--                        <a href="{{ route('panel.items.create') }}" class="btn btn-brand btn-elevate btn-icon-sm">--}}
+{{--                            <i class="la la-plus"></i>--}}
+{{--                            إضافة--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
         <div class="kt-portlet__body">
 
@@ -112,7 +112,7 @@
                             </a>
 						  	<div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="` + editUrl + `"><i class="la la-edit"></i> تعديل</a>
-                                    <a class="dropdown-item delete" href="#" data-url="` + deleteUrl + `"><i class="la la-times"></i> حذف </a>
+<!--                                    <a class="dropdown-item delete" href="#" data-url="` + deleteUrl + `"><i class="la la-times"></i> حذف </a>-->
 						  	</div>
 						</div>`;
                 },

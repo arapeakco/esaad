@@ -16,16 +16,16 @@ class ItemController extends Controller
         return view('panel.items.index');
     }
 
-    public function create()
-    {
-        return view('panel.items.create');
-    }
-
-    public function store(ItemRequest $request)
-    {
-        $item = Item::create($request->only(Item::FILLABLE))->createTranslation($request);
-        return $this->response_api(true, __('front.success'), StatusCodes::OK);
-    }
+//    public function create()
+//    {
+//        return view('panel.items.create');
+//    }
+//
+//    public function store(ItemRequest $request)
+//    {
+//        $item = Item::create($request->only(Item::FILLABLE))->createTranslation($request);
+//        return $this->response_api(true, __('front.success'), StatusCodes::OK);
+//    }
 
     public function edit($id)
     {
@@ -40,12 +40,12 @@ class ItemController extends Controller
 
     }
 
-
-    public function destroy($id)
-    {
-        $item = Item::find($id);
-        return $item->delete() ? $this->response_api(true, __('front.success'), StatusCodes::OK) : $this->response_api(true, __('front.error'), StatusCodes::INTERNAL_ERROR);
-    }
+//
+//    public function destroy($id)
+//    {
+//        $item = Item::find($id);
+//        return $item->delete() ? $this->response_api(true, __('front.success'), StatusCodes::OK) : $this->response_api(true, __('front.error'), StatusCodes::INTERNAL_ERROR);
+//    }
 
 
     public function datatable()

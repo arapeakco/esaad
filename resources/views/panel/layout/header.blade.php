@@ -43,7 +43,7 @@
 
                 <!--begin: Navigation -->
                 <div class="kt-notification">
-                    <a href="#"
+                    <a href="{{ route('panel.profile.show') }}"
                        class="kt-notification__item">
                         <div class="kt-notification__item-details">
                             <div class="kt-notification__item-title kt-font-bold">

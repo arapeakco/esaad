@@ -190,8 +190,9 @@ return [
         'source.name'   => 'اسم حامل البطاقة',
         'source.month'   => 'شهر الإنتهاء',
         'source.year'   => 'سنة الإنتهاء',
-        'source.cvv'   => 'الرقم السري',
+        'source.cvc'   => 'الرقم السري',
         'membership_id'   => 'العضوية',
+        '3-D Secure transaction attempt failed (Invalid security code)'   => 'فشلت محاولة المعاملة الآمنة ثلاثية الأبعاد (رمز أمان غير صالح)',
 
 
     ],

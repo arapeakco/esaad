@@ -16,16 +16,16 @@ class PostTypeController extends Controller
         return view('panel.postTypes.index');
     }
 
-    public function create()
-    {
-        return view('panel.postTypes.create');
-    }
-
-    public function store(PostTypeRequest $request)
-    {
-        $item = PostType::create($request->only(PostType::FILLABLE))->createTranslation($request);
-        return $this->response_api(true, __('front.success'), StatusCodes::OK);
-    }
+//    public function create()
+//    {
+//        return view('panel.postTypes.create');
+//    }
+//
+//    public function store(PostTypeRequest $request)
+//    {
+//        $item = PostType::create($request->only(PostType::FILLABLE))->createTranslation($request);
+//        return $this->response_api(true, __('front.success'), StatusCodes::OK);
+//    }
 
     public function edit($id)
     {
@@ -41,11 +41,11 @@ class PostTypeController extends Controller
     }
 
 
-    public function destroy($id)
-    {
-        $item = PostType::find($id);
-        return $item->delete() ? $this->response_api(true, __('front.success'), StatusCodes::OK) : $this->response_api(true, __('front.error'), StatusCodes::INTERNAL_ERROR);
-    }
+//    public function destroy($id)
+//    {
+//        $item = PostType::find($id);
+//        return $item->delete() ? $this->response_api(true, __('front.success'), StatusCodes::OK) : $this->response_api(true, __('front.error'), StatusCodes::INTERNAL_ERROR);
+//    }
 
 
     public function datatable()

@@ -6,7 +6,9 @@ use App\Admin;
 use App\Constants\StatusCodes;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -65,4 +67,37 @@ class AdminController extends Controller
         return getDatatable($items);
     }
 
+
+    public function showProfile()
+    {
+        return view('panel.profile');
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $admin = auth('admin')->user();
+        $data = $request->all();
+        $validation = Validator::make($data, [
+            'name' => 'required|string',
+            'email' => 'required|email|unique:admins,email,' . $admin->id . '|unique:users,email',
+            'password' => 'nullable|min:6|confirmed',
+        ]);
+        if ($validation->fails()) {
+            return response()->json([
+                'status' => false,
+                'msg' => $validation->errors()->first()
+            ], StatusCodes::VALIDATION_ERROR);
+        }
+
+        if (!$request->filled('password')) {
+            $data['password'] = $admin->password;
+        } else {
+            $data['password'] = Hash::make($data['password']);
+        }
+
+        $admin->update($data);
+
+        return $this->response_api(true, __('front.success'), StatusCodes::OK);
+
+    }
 }

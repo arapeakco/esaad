@@ -16,8 +16,7 @@ class ItemRequest extends FormRequest
      */
     public function authorize()
     {
-        $this->id = $this->route('id');
-        return auth('admin')->user()->can('manage_faqs');
+        return auth('admin')->user()->can('manage_about');
     }
 
     /**
