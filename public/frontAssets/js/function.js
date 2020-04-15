@@ -31,7 +31,7 @@
   })
 
 
-  $('.card-faq .card-header .btn-link').click(function(){
+  $(document).on('click','.card-faq .card-header .btn-link',function(){
     $(this).closest('.card-faq').siblings().removeClass('active')
     $(this).closest('.card-faq').toggleClass('active')
   })
@@ -55,9 +55,6 @@ $(window).scroll(function () {
 
 $('.main-header a[data-scroll] ').click(function (e) {
   e.preventDefault();
-
-
-
 
     $('html, body').animate({
       scrollTop: $('#' + $(this).data('scroll')).offset().top -40
@@ -175,7 +172,28 @@ $(".scrollTop").on("click", function() {
       }
   });
 
+  $('.selectpicker').selectpicker();
 
+
+  $(document).on('click','.add_list_row',function(){
+      $('.widget__item-list').append(`
+        <div class="widget__item-2" id="membership">
+            <div class="widget__item-action"><i class="fa fa-times-circle"></i></div>
+            <div class="widget__item-content">
+                <div class="widget__item-image">
+                    <img src="{{ asset('frontAssets/images/img-4.png') }}" alt="">
+                </div>
+                <div class="widget__item-info">
+                    <h3 class="widget__item-title">عضوية التميز</h3>
+                    <p class="widget__item-price">220 ريال</p>
+                </div>
+            </div>
+            <div class="widget__item-total">234 <span>ريال</span></div>
+        </div>
+        `)
+      $('.selectpicker').selectpicker();
+      $(".list-row").find('.add_list_row').not(":last").fadeOut()
+  })
 
 }(jQuery));
 

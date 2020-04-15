@@ -3,10 +3,7 @@
     <div class="container">
         <div class="header-mobile-content">
             <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('logo.png') }}" alt=""/></a></div>
-            <div class="d-flex align-items-center">
-              <a href="" class="whatsapp-link ml-3"><i class="fab fa-whatsapp"></i></a>
-              <div class="header-mobile__toolbar"><i class="fa fa-bars"></i></div>
-            </div>
+            <div class="header-mobile__toolbar"><i class="fa fa-bars"></i></div>
         </div>
     </div>
 </div>
@@ -25,7 +22,6 @@
                         @foreach(getMenuItems() as $index => $item)
                             <li class="menu_item"><a class="menu_link {{ $index == 0 ? 'active' : '' }}" data-scroll="{{ 'section' .($index+1) }}"><span class="menu_link-text">{{ $item->name }}</span></a></li>
                         @endforeach
-                        <li class="menu_item"><a class="menu_link menu_link_whatsapp whatsapp-link"><i class="fab fa-whatsapp"></i></a></li>
                     @endif
 {{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-about"><span class="menu_link-text">عن الحملة</span></a></li>--}}
 {{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-banks"><span class="menu_link-text">مصارف الحملة</span></a></li>--}}

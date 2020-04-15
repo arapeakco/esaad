@@ -44,25 +44,50 @@
                         </div>
                         <div class="widget__item-total">234 <span>ريال</span></div>
                     </div>
-
                 </div>
-                <h3 class="modal-title">اختر طريقة الدفع</h3>
+                <div class="row justify-content-center list-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <select class="form-control selectpicker" title="الاسم">
+                                <option>احمد خالد</option>
+                                <option>احمد خالد</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <select class="form-control selectpicker" title=" عدد الساعات" >
+                                <option>22 ساعة </option>
+                                <option>42 ساعة </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button class="general_btn_md py-2 add_list_row">اضافة</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="modal-title mt-4">اختر طريقة الدفع</h3>
                 <div class="list-payment-method">
-                    <label class="m-radio mb-0">
+                    <img src="{{ asset('frontAssets/images/visa.png') }}" alt="visa" width="80">
+                    <img src="{{ asset('frontAssets/images/mastercard.png') }}" alt="mastercard" class="mx-4" width="50">
+                    <img src="{{ asset('frontAssets/images/mada.png') }}" alt="mada" width="70">
+                    <!-- <label class="m-radio mb-0"> -->
                         {{--                            <input type="radio" checked name="checkbox">--}}
                         {{--                            <span class="checkmark"></span>--}}
-                        <img src="{{ asset('frontAssets/images/visa.png') }}" alt="">
-                    </label>
-                    <label class="m-radio mb-0">
+                        <!-- <img src="{{ asset('frontAssets/images/visa.png') }}" alt=""> -->
+                    <!-- </label> -->
+                    <!-- <label class="m-radio mb-0"> -->
                         {{--                            <input type="radio" name="checkbox">--}}
                         {{--                            <span class="checkmark"></span>--}}
-                        <img src="{{ asset('frontAssets/images/mastercard.png') }}" alt="">
-                    </label>
-                    <label class="m-radio mb-0">
+                        <!-- <img src="{{ asset('frontAssets/images/mastercard.png') }}" alt=""> -->
+                    <!-- </label> -->
+                    <!-- <label class="m-radio mb-0"> -->
                         {{--                            <input type="radio" name="checkbox">--}}
                         {{--                            <span class="checkmark"></span>--}}
-                        <img src="{{ asset('frontAssets/images/mada.png') }}" alt="">
-                    </label>
+                        <!-- <img src="{{ asset('frontAssets/images/mada.png') }}" alt=""> -->
+                    <!-- </label> -->
                 </div>
 
                 <form action="{{ url('pay') }}" method="post" class="form-payment">

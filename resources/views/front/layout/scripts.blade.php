@@ -1,6 +1,7 @@
 <script src="{{ asset('frontAssets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('frontAssets/js/wow.min.js') }}"></script>
 <script src="{{ asset('frontAssets/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('frontAssets/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('frontAssets/js/sweetalert2.init.js') }}"></script>
 <script src="{{ asset('frontAssets/js/jqueryValidate.min.js') }}"></script>
 <script src="{{ asset('frontAssets/js/owl.carousel.min.js') }}"></script>

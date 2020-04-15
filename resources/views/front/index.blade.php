@@ -145,7 +145,7 @@
                 <div class="slider-famous   owl-carousel owl-theme">
                     @foreach($famous->posts as $singlePost)
                         <div class="entry-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                            <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideo">
+                            <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideoMaster">
                                 <picture>
                                     <img src="{{ url('image/' . @$singlePost->data['image'] . '/333x366') }}"
                                          alt="{{ $singlePost->name }}">
@@ -235,6 +235,7 @@
     </div>
 </div>
 
+<a class="link-whatsapp " href=""><img src="{{ asset('frontAssets/images/whatsapp.png') }}" alt=""></a>
 
 <div class="scrollTop"><i class="far fa-chevron-up"></i></div>
 @include('front.layout.modals')
