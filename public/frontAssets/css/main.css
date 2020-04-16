@@ -755,8 +755,19 @@ label.error {
 }
 .hero-chart {
     width: 80px;
-    margin: 0px auto 40px;
+    margin: 0px auto 70px;
     position: relative;
+}
+.textChart {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    width: 100px;
+    text-align: center;
+    top: 105%;
 }
 .hero .hero-action {
     text-align: center;

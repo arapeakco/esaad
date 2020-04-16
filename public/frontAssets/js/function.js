@@ -409,7 +409,7 @@ Chart.pluginService.register({
         ctx.restore();
         ctx.font = fontSize  + "rem sans-serif"
         ctx.textBaseline = "middle"
-        ctx.textColor = "red"
+        ctx.textColor = "#FFF"
 
 
         var text = percent + "%",
