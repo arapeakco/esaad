@@ -375,3 +375,74 @@ $('.form-payment').submit(function (e) {
 
 });
 
+//
+
+
+var data = {
+    labels: ["Red","Blue"],
+    datasets: [
+      {
+        data: [200, 50],
+        backgroundColor: ["#64CA31","#4E5261"],
+      }]
+  };
+
+
+
+Chart.pluginService.register({
+    beforeDraw: function(chart) {
+      var width = chart.chart.width,
+          height = chart.chart.height,
+          ctx = chart.chart.ctx,
+          type = chart.config.type;
+
+      if (type == 'doughnut')
+      {
+        var color ='#fff';
+          var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
+                      (chart.config.data.datasets[0].data[0] +
+                      chart.config.data.datasets[0].data[1]));
+        var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+
+        ctx.restore();
+        ctx.font = fontSize  + "rem sans-serif"
+        ctx.textBaseline = "middle"
+        ctx.textColor = "red"
+
+
+        var text = percent + "%",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = (height + chart.chartArea.top) / 2;
+
+        ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
+        ctx.fillStyle = '#FFF';
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+      }
+    }
+  });
+
+
+  var myChart = new Chart(document.getElementById('myChart'), {
+    type: 'doughnut',
+    data: data,
+    options: {
+      responsive: true,
+      cutoutPercentage: 75,
+        responsive: true,
+      legend: {
+        display: false
+      },
+      elements: {
+        center: {
+          color: "#fff",
+          fontStyle: "Arial",
+        },
+        arc: {
+            borderWidth: 0
+        }
+      }
+    }
+  });

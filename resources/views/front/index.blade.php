@@ -43,7 +43,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mx-auto">
                     <div class="hero-action wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <a class="btn hero-action-btn  @if(@$slider->posts()->first()->data['is_visible']) d-none @endif" @if(@$slider->posts()->first()->data['link']) href="{{ @$slider->posts()->first()->data['link'] }}" target="_blank" @else data-toggle="modal" data-target="#ModalPayment" @endif >{{ @$slider->posts()->first()->name }}</a>
+                        <a class="btn hero-action-btn  @if(@$slider->posts()->first()->data['is_visible']) d-none @endif"
+                           @if(@$slider->posts()->first()->data['link']) href="{{ @$slider->posts()->first()->data['link'] }}"
+                           target="_blank" @else data-toggle="modal"
+                           data-target="#ModalPayment" @endif >{{ @$slider->posts()->first()->name }}</a>
                     </div>
                 </div>
             </div>
@@ -255,7 +258,8 @@
     </div>
 </div>
 
-<a class="link-whatsapp " href="https://api.whatsapp.com/send?phone={{ getSetting('whatsapp') }}&text=السلام عليكم"><img src="{{ asset('frontAssets/images/whatsapp.png') }}" alt=""></a>
+<a class="link-whatsapp " href="https://api.whatsapp.com/send?phone={{ getSetting('whatsapp') }}&text=السلام عليكم"><img
+        src="{{ asset('frontAssets/images/whatsapp.png') }}" alt=""></a>
 
 <div class="scrollTop"><i class="far fa-chevron-up"></i></div>
 @include('front.layout.modals')
