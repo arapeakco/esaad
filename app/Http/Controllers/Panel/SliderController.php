@@ -25,6 +25,8 @@ class SliderController extends Controller
         $data = $request->all();
         $data['post_type_id'] = 6;
         $arr = [];
+        $arr['is_visible'] = $request->filled('is_visible') ? 1: 0;
+        $arr['link'] = $request->filled('link') ? $data['link'] : "";
 
         if ($file = $request->file('image')) {
             $arr['image'] = $file->store('images');

@@ -115,7 +115,7 @@ class TransactionController extends Controller
     public function status(Request $request)
     {
 
-        if (@$request->id && $request->failed == "paid") {
+        if (@$request->id && $request->status == "paid") {
             $item = Transaction::where('payment_id', $request->id)->update(['status' => $request->status]);;
             return redirect('/')->with('success', __('front.success'));
         }else{

@@ -34,6 +34,19 @@
                                placeholder="الإسم" required value="{{ isset($item) ? $item->name : ''  }}">
                     </div>
 
+                    <div class="form-group">
+                        <label>الرابط الخارجي</label>
+                        <input class="form-control m-input" type="text" name="link"
+                               placeholder="الرابط الخارجي" required value="{{ isset($item) ? @$item->data['link'] : ''  }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="kt-checkbox">
+                            <input type="checkbox" name="is_visible" {{ isset($item) ? (@$item->data['is_visible'] ? 'checked' : '') : '' }}> الظهور في الموقع
+                            <span></span>
+                        </label>
+                    </div>
+
                 </div>
             </div>
         </div>

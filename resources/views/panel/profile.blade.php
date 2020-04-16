@@ -43,9 +43,8 @@
                     </div>
                     <div class="form-group">
                         <label>كلمة المرور</label>
-                        <input class="form-control m-input" type="password" {{ isset($item) ? '' : "required" }}  name="password"
+                        <input class="form-control m-input" type="password" {{ isset($item) ? '' : "required" }} id="password" name="password"
                                placeholder="كلمة المرور">
-{{--                        //id="password"--}}
                     </div>
                     <div class="form-group">
                         <label>تاكيد كلمة المرور</label>

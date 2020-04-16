@@ -42,8 +42,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mx-auto">
-                    <div class="hero-action wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"><a
-                            class="btn hero-action-btn" data-toggle="modal" data-target="#ModalPayment">{{ @$slider->posts()->first()->name }}</a>
+                    <div class="hero-action wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <a class="btn hero-action-btn  @if(@$slider->posts()->first()->data['is_visible']) d-none @endif" @if(@$slider->posts()->first()->data['link']) href="{{ @$slider->posts()->first()->data['link'] }}" target="_blank" @else data-toggle="modal" data-target="#ModalPayment" @endif >{{ @$slider->posts()->first()->name }}</a>
                     </div>
                 </div>
             </div>

@@ -142,7 +142,7 @@
 
                                 <div class="form-group">
                                     <label>اتصال </label>
-                                    <input type="text" name="phone"
+                                    <input type="tex" name="phone"
                                            value="{{ getSetting('phone') }}" class="form-control"
                                            aria-describedby="emailHelp" placeholder="اتصال ">
                                 </div>
