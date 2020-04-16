@@ -748,7 +748,16 @@ label.error {
     -ms-flex-pack: center;
     justify-content: center;
 }
-
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.hero-chart {
+    width: 80px;
+    margin: 0px auto 40px;
+    position: relative;
+}
 .hero .hero-action {
     text-align: center;
     position: relative;

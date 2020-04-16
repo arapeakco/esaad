@@ -42,9 +42,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mx-auto">
+                <div class="hero-content">
+                    <div class="hero-chart wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"><canvas id="myChart" width="40" height="40"></canvas><span class="textChart">انجاز الحملة</span></div>
                     <div class="hero-action wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"><a
                             class="btn hero-action-btn" data-toggle="modal" data-target="#ModalPayment">{{ @$slider->posts()->first()->name }}</a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
