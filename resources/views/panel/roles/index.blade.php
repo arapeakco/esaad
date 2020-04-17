@@ -69,6 +69,14 @@
 
         window.columns = [
             {
+                field: ' ',
+                title: "الرقم التسلسلي",
+                width: 100,
+                textAlign: "center",
+                template: function (data , index, datatable) {
+                    return ( (datatable.getCurrentPage() - 1) * datatable.getPageSize() ) +  index + 1;
+                },
+            },{
                 field: 'name',
                 title: "الإسم",
                 textAlign: "center",

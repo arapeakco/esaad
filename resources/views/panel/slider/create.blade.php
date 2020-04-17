@@ -65,6 +65,20 @@
             <div class="kt-portlet">
                 <div class="kt-portlet__body ">
 
+                    <div class="form-group">
+                        <label>انجاز الحملة</label>
+                        <input class="form-control m-input" type="number" min="0" max="100" name="progress"
+                               placeholder="انجاز الحملة" required value="{{ isset($item) ? @$item->data['progress'] : ''  }}">
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="kt-portlet">
+                <div class="kt-portlet__body ">
+
 
                     <div class="form-group">
                         <label>الخلفية</label>

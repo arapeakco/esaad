@@ -111,22 +111,26 @@
                                        placeholder="الإسم على البطاقة ">
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="form-group">
-                                <select class="selectpicker hoursSelect" name="source[month]">
-                                    @for($i = 1 ; $i <= 12 ; $i++)
-                                        <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="form-group">
-                                <select class="selectpicker hoursSelect" name="source[year]">
-                                    @for($i = now()->year ; $i <= now()->year +20 ; $i++)
-                                        <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
-                                </select>
+                        <div class="col-md-6 mb3">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <select class="selectpicker hoursSelect" name="source[month]">
+                                            @for($i = 1 ; $i <= 12 ; $i++)
+                                                <option value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <select class="selectpicker hoursSelect" name="source[year]">
+                                            @for($i = now()->year ; $i <= now()->year +20 ; $i++)
+                                                <option value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">

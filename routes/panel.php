@@ -27,7 +27,7 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
         Route::get('index', 'HomeController@index')->name('index');
 
 
-        Route::group(['before' => 'profile' , 'as' =>'profile.'], function () {
+        Route::group(['prefix' => 'profile' , 'as' =>'profile.'], function () {
             Route::get('/' , ['as' => 'show'  , 'uses' => 'AdminController@showProfile']);
             Route::post('/' , ['as' => 'update'  , 'uses' => 'AdminController@updateProfile']);
         });

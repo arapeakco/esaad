@@ -189,6 +189,7 @@
                             <img src="${image}" alt="">
                         </div>
                         <div class="widget__item-info">
+                            <p class="widget__item-id d-none"> ${id}</p>
                             <h3 class="widget__item-title">${name}</h3>
                             <p class="widget__item-price">${price} ريال</p>
                         </div>
@@ -208,6 +209,23 @@
 
     })
 
+    $(document).on('click', '#ModalPayment .widget__item-action', function () {
+
+        var id = parseInt($(this).closest('.widget__item-2').find('.widget__item-id').text());
+        var index = membersArr.indexOf(id);
+
+        priceArr.splice(index, 1);
+        membersArr.splice(index, 1);
+
+
+        var totalToPay = priceArr.reduce((a, b) => a + b, 0);
+
+        $('#ModalPayment').find('#total').text(totalToPay);
+        $('#ModalPayment').find('form input[name=amount]').val(totalToPay);
+        $('#ModalPayment').find('form input[name=membership_id]').val(membersArr);
+
+        $(this).closest('.widget__item-2').remove();
+    });
 
 }(jQuery));
 
@@ -379,70 +397,68 @@ $('.form-payment').submit(function (e) {
 
 
 var data = {
-    labels: ["Red","Blue"],
+    labels: ["Red", "Blue"],
     datasets: [
-      {
-        data: [200, 50],
-        backgroundColor: ["#64CA31","#4E5261"],
-      }]
-  };
-
+        {
+            data: [200, 50],
+            backgroundColor: ["#64CA31", "#4E5261"],
+        }]
+};
 
 
 Chart.pluginService.register({
-    beforeDraw: function(chart) {
-      var width = chart.chart.width,
-          height = chart.chart.height,
-          ctx = chart.chart.ctx,
-          type = chart.config.type;
+    beforeDraw: function (chart) {
+        var width = chart.chart.width,
+            height = chart.chart.height,
+            ctx = chart.chart.ctx,
+            type = chart.config.type;
 
-      if (type == 'doughnut')
-      {
-        var color ='#fff';
-          var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
-                      (chart.config.data.datasets[0].data[0] +
-                      chart.config.data.datasets[0].data[1]));
-        var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'middle';
+        if (type == 'doughnut') {
+            var color = '#fff';
+            var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
+                (chart.config.data.datasets[0].data[0] +
+                    chart.config.data.datasets[0].data[1]));
+            var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
 
-        ctx.restore();
-        ctx.font = fontSize  + "rem sans-serif"
-        ctx.textBaseline = "middle"
-        ctx.textColor = "#FFF"
+            ctx.restore();
+            ctx.font = fontSize + "rem sans-serif"
+            ctx.textBaseline = "middle"
+            ctx.textColor = "#FFF"
 
 
-        var text = percent + "%",
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = (height + chart.chartArea.top) / 2;
+            var text = percent + "%",
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = (height + chart.chartArea.top) / 2;
 
-        ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
-        ctx.fillStyle = '#FFF';
-        ctx.fillText(text, textX, textY);
-        ctx.save();
-      }
+            ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
+            ctx.fillStyle = '#FFF';
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
     }
-  });
+});
 
 
-  var myChart = new Chart(document.getElementById('myChart'), {
+var myChart = new Chart(document.getElementById('myChart'), {
     type: 'doughnut',
     data: data,
     options: {
-      responsive: true,
-      cutoutPercentage: 75,
         responsive: true,
-      legend: {
-        display: false
-      },
-      elements: {
-        center: {
-          color: "#fff",
-          fontStyle: "Arial",
+        cutoutPercentage: 75,
+        responsive: true,
+        legend: {
+            display: false
         },
-        arc: {
-            borderWidth: 0
+        elements: {
+            center: {
+                color: "#fff",
+                fontStyle: "Arial",
+            },
+            arc: {
+                borderWidth: 0
+            }
         }
-      }
     }
-  });
+});

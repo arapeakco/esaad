@@ -168,7 +168,7 @@
                 <div class="slider-famous   owl-carousel owl-theme">
                     @foreach($famous->posts as $singlePost)
                         <div class="entry-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                            <div class="entry-box-image overlay" data-toggle="modal" data-target="#ModalVideoMaster">
+                            <div class="entry-box-image overlay" data-toggle="modal" data-url="{{ $singlePost->getEmbededUrl() }}" data-target="#ModalVideoMaster">
                                 <picture>
                                     <img src="{{ url('image/' . @$singlePost->data['image'] . '/333x366') }}"
                                          alt="{{ $singlePost->name }}">

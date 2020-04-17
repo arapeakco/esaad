@@ -27,6 +27,7 @@ class SliderController extends Controller
         $arr = [];
         $arr['is_visible'] = $request->filled('is_visible') ? 1: 0;
         $arr['link'] = $request->filled('link') ? $data['link'] : "";
+        $arr['progress'] = $request->filled('progress') ? $data['progress'] : "0";
 
         if ($file = $request->file('image')) {
             $arr['image'] = $file->store('images');

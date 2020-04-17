@@ -39,6 +39,6 @@ class HomeController extends Controller
     public function storeContact(ContactRequest $request)
     {
         Contact::create($request->all());
-        return $this->response_api(true, __('front.msgSent') , StatusCodes::OK);
+        return $this->response_api(true, (getSetting('contactUs_response')??__('front.msgSent')) , StatusCodes::OK);
     }
 }

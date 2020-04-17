@@ -37,6 +37,12 @@
                                 </a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_4">
+                                    نصوص الموقع
+                                </a>
+                            </li>
+
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="kt_tabs_5_1" role="tabpanel">
@@ -146,6 +152,18 @@
                                            value="{{ getSetting('phone') }}" class="form-control"
                                            aria-describedby="emailHelp" placeholder="اتصال ">
                                 </div>
+
+                            </div>
+
+                            <div class="tab-pane" id="kt_tabs_5_4" role="tabpanel">
+
+                                <div class="form-group">
+
+                                    <label>نص تواصل معنا</label>
+                                    <textarea name="contactUs_response" class="form-control" aria-describedby="emailHelp"
+                                              placeholder="نص تواصل معنا">{{ getSetting('contactUs_response') }}</textarea>
+                                </div>
+
 
                             </div>
 

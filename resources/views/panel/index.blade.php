@@ -53,6 +53,41 @@
                     </div>
                 </div>
 
+
+                <div class="col-md-  col-lg-6 col-xl-3">
+                    <div class="kt-widget24">
+                        <div class="kt-widget24__details">
+                            <div class="kt-widget24__info">
+                                <h4 class="kt-widget24__title">
+                                    عدد العمليات الناجحة
+                                </h4>
+                            </div>
+                            <span class="kt-widget24__stats kt-font-success">{{ $successTransactions }}</span>
+                        </div>
+
+                        <div class="progress progress--sm">
+                            <div class="progress-bar kt-bg-success" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="kt-widget24__action"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6 col-xl-3">
+                    <div class="kt-widget24">
+                        <div class="kt-widget24__details">
+                            <div class="kt-widget24__info">
+                                <h4 class="kt-widget24__title">
+                                    عدد العمليات الفاشلة
+                                </h4>
+                            </div>
+                            <span class="kt-widget24__stats kt-font-danger">{{ $failedTransactions }} </span>
+                        </div>
+                        <div class="progress progress--sm">
+                            <div class="progress-bar kt-bg-danger" role="progressbar" style="width: 84%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

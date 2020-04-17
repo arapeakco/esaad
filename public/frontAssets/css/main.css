@@ -1407,6 +1407,22 @@ label.error {
 .social-media li a:hover.facebook {
     background-color: #4267b2;
 }
+.social-media li a:hover.youtube {
+    background-color: #FF0000;
+}
+
+.social-media li a:hover.snapchat {
+    background-color: #FFFC00;
+}
+
+.social-media li a:hover.email {
+    background-color: #D54E41;
+}
+.social-media li a:hover.phone {
+    background-color: #188038;
+}
+
+
 
 .widget__item-2 {
     display: -webkit-box;

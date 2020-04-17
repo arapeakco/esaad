@@ -18,6 +18,8 @@ class HomeController extends Controller
 
         $data['transactions'] = Transaction::all()->count();
         $data['total_amount'] = Transaction::sum('amount');
+        $data['successTransactions'] = Transaction::where('status' ,'paid')->count();
+        $data['failedTransactions'] = Transaction::where('status' ,'failed')->count();
 
         return view('panel.index' ,$data );
     }
