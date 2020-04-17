@@ -795,7 +795,7 @@ label.error {
 @media (min-width: 992px) {
     .hero {
         height: 100vh;
-        padding-bottom: 110px;
+        padding-bottom: 180px;
     }
 }
 
@@ -1826,15 +1826,15 @@ label.error {
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 100%; }
 
-  .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
-  .bootstrap-select .dropdown-toggle:focus {
+.bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
+.bootstrap-select .dropdown-toggle:focus {
     outline: 0px auto -webkit-focus-ring-color !important;
     outline-offset: 0px; }
 
-  .bootstrap-select .dropdown-toggle .filter-option {
+.bootstrap-select .dropdown-toggle .filter-option {
     text-align: right; }
 
-  .dropdown-toggle {
+.dropdown-toggle {
     background-color: #fcfcfc;
     border-color: #fcfcfc;
     border-radius: 8px;
@@ -1842,25 +1842,25 @@ label.error {
     font-size: 12px;
     color: #545454 !important; }
 
-  .bg-white .dropdown-toggle {
+.bg-white .dropdown-toggle {
     background-color: #fff;
     border: 0px !important; }
 
-  .dropdown-toggle:hover, .dropdown-toggle:focus {
+.dropdown-toggle:hover, .dropdown-toggle:focus {
     background-color: #fcfcfc !important;
     border: 1px solid #ecedee;
- }
+}
 
-  .select-phone .filter-option-inner-inner img,
-  .select-phone .dropdown-menu img {
+.select-phone .filter-option-inner-inner img,
+.select-phone .dropdown-menu img {
     width: 20px;
     height: 20px;
     margin-right: 5px; }
 
-  .bootstrap-select .dropdown-menu li.selected.active a:hover {
+.bootstrap-select .dropdown-menu li.selected.active a:hover {
     color: #fff; }
 
-  .btn.dropdown-toggle:after {
+.btn.dropdown-toggle:after {
     text-align: center;
     display: inline;
     border: 0;
@@ -1880,15 +1880,15 @@ label.error {
     left: 10px;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    transform: translateY(-50%); }
 
-  .select-phone .btn.dropdown-toggle:after {
+.select-phone .btn.dropdown-toggle:after {
     right: 0px !important;
     left: auto !important; }
-  .select-phone .btn-light {
+.select-phone .btn-light {
     border-radius: 30px 0px 0px 30px; }
 
-  .dropdown-menu {
+.dropdown-menu {
     border: 0 !important;
     margin: 0;
     min-width: 14rem;
@@ -1898,10 +1898,10 @@ label.error {
     border-radius: 4px;
     text-align: right;
     left: 0; }
-    .dropdown-menu .dropdown-item {
-      font-size: 13px; }
+.dropdown-menu .dropdown-item {
+    font-size: 13px; }
 
-  .dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
     background-color: #942b52; }

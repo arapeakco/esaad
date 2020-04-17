@@ -440,8 +440,13 @@ Chart.pluginService.register({
     }
 });
 
+var progressChart = document.getElementById('myChart');
+var progress = $(progressChart).data('progress');
+data.datasets[0].data[0] = progress;
+data.datasets[0].data[1] = (100 - parseFloat(progress));
 
-var myChart = new Chart(document.getElementById('myChart'), {
+var myProgress = new Chart(progressChart,  {
+
     type: 'doughnut',
     data: data,
     options: {
