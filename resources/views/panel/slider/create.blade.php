@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label>الرابط الخارجي</label>
                         <input class="form-control m-input" type="text" name="link"
-                               placeholder="الرابط الخارجي" required value="{{ isset($item) ? @$item->data['link'] : ''  }}">
+                               placeholder="الرابط الخارجي"  value="{{ isset($item) ? @$item->data['link'] : ''  }}">
                     </div>
 
                     <div class="form-group">
