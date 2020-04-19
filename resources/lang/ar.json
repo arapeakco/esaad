@@ -1,23 +1,19 @@
 {
-  "There is no enough amount on the card to complete the transaction" :   "لا يوجد رصيد كافي في البطاقة",
-  "Transaction declined by the customer’s bank. The customer should use an alternate credit card" :   "عملية مرفوضة من بنك العميل. يجب استخدام بطاقة أخرى",
-  "The payment process took too long (more than 15 minutes) and then failed. Either because the bank message containing the PIN was delayed to the customer’s mobile phone, or because the customer was late in completing it." :   "عملية الدفع استغرقت وقت أكثر من المسموح (15 دقائق) ففشلت. إما بسبب تأخر وصول رسالة البنك التي تحتوي الرقم السري إلى جوال العميل، أو بسبب تأخر العميل عن إكمالها",
-  "The customer’s bank has declined the transaction for an undefined cause. The customer should use an alternate credit card." :   "رفض بنك العميل المعاملة لخطأ غير محدد في نظامهم. يجب المحاولة ببطاقة أخرى",
-  "The transaction failed as the card appears to have expired." :   "البطاقة منتهية",
-  "The customer’s bank was unable to be connected. The customer should attempt to process this transaction again." :   "فشل الاتصال مع بنك العميل. يجب علي العميل المحاولة مرة أخرى بوقت لاحق",
-  "The security number (CVC/CVV) was entered incorrectly by the cardholder" :   "العميل أدخل رمز الأمان خلف البطاقة (CVC/CVV) بشكل خاطئ",
-  "The customer’s bank has indicated there is a problem with the credit card number." :   "بنك العميل رفض العملية بسبب وجود مشكلة في البطاقة وعليه مراجعتهم",
-  "Authentication is unsuccessful or not attempted by the cardholder" :   "المصادقة غير ناجحة أو تم إلغاءها من حامل البطاقة",
-  "Either cardholder or card issuing bank is not 3D enrolled. 3D card authentication is unsuccessful" :   "المصادقة فشلت بسبب أن البنك المصدر للبطاقة لم يفعل خدمة التحقق الأمني 3D Secure، أو أن البطاقة غير مدرجة فيها",
-  "There was an authentication error" :   "خطأ في عملية المصادقة",
-  "The merchant account is not configured to receive Visa transactions" :   "حساب التاجر لم يفعل من قبل البنك لاستقبال مدفوعات فيزا",
-  "The merchant account is not configured to receive MasterCard transactions" :   "حساب التاجر لم يفعل من قبل البنك لاستقبال مدفوعات ماستر كارد",
-  "The card was not listed by the issuing bank. The buyer needs to communicate with his bank to activate the card for online payment. Or the card number was entered incorrectly by the cardholder" :   "البطاقة غير مدرجة في خدمة التحقق الأمني 3D Secure. أو أن العميل أدخل رقم البطاقة بشكل خاطئ",
-  "The card number was entered incorrectly by the cardholder" :   "العميل أدخل رقم بطاقة خاطئ",
-  "The amount exceeded the limit per transaction" :   "المبلغ تجاوز الحد المسموح لكل عملية",
-
-
-  "M074: Credit card is not originated from allowed country banks." :   "M074: لم يتم إنشاء بطاقة الائتمان من البنوك القطرية المسموح بها"
-
-
+    "There is no enough amount on the card to complete the transaction": "لا يوجد رصيد كافي في البطاقة",
+    "Transaction declined by the customer’s bank. The customer should use an alternate credit card": "عملية مرفوضة من بنك العميل. يجب استخدام بطاقة أخرى",
+    "The payment process took too long (more than 15 minutes) and then failed. Either because the bank message containing the PIN was delayed to the customer’s mobile phone, or because the customer was late in completing it.": "عملية الدفع استغرقت وقت أكثر من المسموح (15 دقائق) ففشلت. إما بسبب تأخر وصول رسالة البنك التي تحتوي الرقم السري إلى جوال العميل، أو بسبب تأخر العميل عن إكمالها",
+    "The customer’s bank has declined the transaction for an undefined cause. The customer should use an alternate credit card.": "رفض بنك العميل المعاملة لخطأ غير محدد في نظامهم. يجب المحاولة ببطاقة أخرى",
+    "The transaction failed as the card appears to have expired.": "البطاقة منتهية",
+    "The customer’s bank was unable to be connected. The customer should attempt to process this transaction again.": "فشل الاتصال مع بنك العميل. يجب علي العميل المحاولة مرة أخرى بوقت لاحق",
+    "The security number (CVC/CVV) was entered incorrectly by the cardholder": "العميل أدخل رمز الأمان خلف البطاقة (CVC/CVV) بشكل خاطئ",
+    "The customer’s bank has indicated there is a problem with the credit card number.": "بنك العميل رفض العملية بسبب وجود مشكلة في البطاقة وعليه مراجعتهم",
+    "Authentication is unsuccessful or not attempted by the cardholder": "المصادقة غير ناجحة أو تم إلغاءها من حامل البطاقة",
+    "Either cardholder or card issuing bank is not 3D enrolled. 3D card authentication is unsuccessful": "المصادقة فشلت بسبب أن البنك المصدر للبطاقة لم يفعل خدمة التحقق الأمني 3D Secure، أو أن البطاقة غير مدرجة فيها",
+    "There was an authentication error": "خطأ في عملية المصادقة",
+    "The merchant account is not configured to receive Visa transactions": "حساب التاجر لم يفعل من قبل البنك لاستقبال مدفوعات فيزا",
+    "The merchant account is not configured to receive MasterCard transactions": "حساب التاجر لم يفعل من قبل البنك لاستقبال مدفوعات ماستر كارد",
+    "The card was not listed by the issuing bank. The buyer needs to communicate with his bank to activate the card for online payment. Or the card number was entered incorrectly by the cardholder": "البطاقة غير مدرجة في خدمة التحقق الأمني 3D Secure. أو أن العميل أدخل رقم البطاقة بشكل خاطئ",
+    "The card number was entered incorrectly by the cardholder": "العميل أدخل رقم بطاقة خاطئ",
+    "The amount exceeded the limit per transaction": "المبلغ تجاوز الحد المسموح لكل عملية",
+    "M074: Credit card is not originated from allowed country banks.": "لم يتم إنشاء بطاقة الائتمان من البنوك القطرية المسموح بها"
 }
