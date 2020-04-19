@@ -49,10 +49,9 @@ class TransactionController extends Controller
                 }
             }
 
-
             return $this->response_api(true , $result->source->transaction_url , StatusCodes::OK);
         } else {
-            return $this->response_api(false ,  __('front.error') , StatusCodes::INTERNAL_ERROR);
+            return $this->response_api(false ,  __($result->message) , StatusCodes::INTERNAL_ERROR);
         }
 
 
