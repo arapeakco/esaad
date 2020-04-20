@@ -20,15 +20,10 @@
                 <ul class="main-menu list-main-menu d-lg-flex align-items-center">
                     @if(getMenuItems())
                         @foreach(getMenuItems() as $index => $item)
-                            <li class="menu_item"><a class="menu_link {{ $index == 0 ? 'active' : '' }}" data-scroll="{{ 'section' .($index+1) }}"><span class="menu_link-text">{{ $item->name }}</span></a></li>
+                            <li class="menu_item"><a @if ($index == (getMenuItems()->count()-1)) href="https://sys.esaad.org.sa/" @else data-scroll="{{ 'section' .($index+1) }}" @endif  class="menu_link {{ $index == 0 ? 'active' : '' }}" ><span class="menu_link-text">{{ $item->name }}</span></a></li>
                         @endforeach
                     @endif
-{{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-about"><span class="menu_link-text">عن الحملة</span></a></li>--}}
-{{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-banks"><span class="menu_link-text">مصارف الحملة</span></a></li>--}}
-{{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-famous"><span class="menu_link-text">مشاهير الحملة</span></a></li>--}}
-{{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-recom"><span class="menu_link-text">التزكيات</span></a></li>--}}
-{{--                    <li class="menu_item"><a class="menu_link" data-scroll="section-faq"><span class="menu_link-text">الأسئلة الشائعة</span></a></li>--}}
-{{--                    <li class="menu_item"><a class="menu_link" data-scroll=""><span class="menu_link-text">تسجيل المستفيدات</span></a></li>--}}
+
                 </ul>
             </div>
         </div>
